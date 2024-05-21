@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { clsx } from "clsx";
-import { ColorBox } from "../entities/color-box/ui/color-box";
+import { ColorsAndType } from "@pages";
 
 export const App: FC = () => {
-  return <ColorBox backgroundColor="var(--color-dark-shade-100)" />;
+  return <ColorsAndType />;
 };
