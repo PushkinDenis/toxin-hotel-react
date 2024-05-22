@@ -7,7 +7,7 @@ export const LayoutUiKit: FC<any> = ({ children }) => {
     <>
       <div className={clsx(styles.wrapper)}>
         <img src="./public/icons/ui-kit-icon.svg" alt="icon" />
-        {children}
+        <main>{children}</main>
       </div>
     </>
   );

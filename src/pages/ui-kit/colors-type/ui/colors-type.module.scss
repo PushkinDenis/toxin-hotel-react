@@ -1,0 +1,23 @@
+.color {
+  display: flex;
+  flex-direction: column;
+  width: 282px;
+}
+.color-block {
+  display: flex;
+  margin-bottom: 20px;
+  &:nth-last-child(-n + 1) {
+    margin-bottom: 0;
+  }
+}
+.color-label {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40px;
+  justify-content: center;
+
+  & > p {
+    font-size: 19px;
+    color: var(--color-dark-shade-100);
+  }
+}
