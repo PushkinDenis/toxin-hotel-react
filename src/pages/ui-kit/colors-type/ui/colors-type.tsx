@@ -4,10 +4,22 @@ import { ColorBox } from "@entities";
 import { LayoutUiKit } from "@pages";
 import styles from "./colors-type.module.scss";
 export const ColorsAndType: FC = () => {
+  const colorArr = ["var(--color-dark-shade-100)", "var(--color-dark-shade-75)", "var(--color-dark-shade-50)", "var(--color-dark-shade-25)", "var(--color-dark-shade-5)", "var(--color-purple)", "var(--color-green)"];
   return (
     <LayoutUiKit>
       <div className={clsx(styles.color)}>
-        <div className={clsx(styles["color-block"])}>
+        {colorArr.map((value) => {
+          return (
+            <div className={clsx(styles["color-block"])}>
+              <ColorBox backgroundColor={value} />
+              <div className={clsx(styles["color-label"])}>
+                <h2>Dark Shade 100%</h2>
+                <p>#1F2041</p>
+              </div>
+            </div>
+          );
+        })}
+        {/* <div className={clsx(styles["color-block"])}>
           <ColorBox backgroundColor="var(--color-dark-shade-100)" />
           <div className={clsx(styles["color-label"])}>
             <h2>Dark Shade 100%</h2>
@@ -55,7 +67,7 @@ export const ColorsAndType: FC = () => {
             <h2>Green </h2>
             <p>#6FCF97</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </LayoutUiKit>
   );
