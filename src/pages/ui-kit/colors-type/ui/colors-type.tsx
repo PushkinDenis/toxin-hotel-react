@@ -12,6 +12,7 @@ export const ColorsAndType: FC = () => {
       <ColorBox backgroundColor="var(--color-dark-shade-5)" />
       <ColorBox backgroundColor="var(--color-purple)" />
       <ColorBox backgroundColor="var(--color-green)" />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium, voluptates sit itaque odit adipisci reiciendis maiores alias, unde totam dolorem tempora, facere quis at officiis quo? Expedita, temporibus repellat.</p>
     </>
   );
 };
