@@ -1,10 +1,11 @@
 import { FC } from "react";
 import { clsx } from "clsx";
 import { ColorBox } from "@entities";
+import { LayoutUiKit } from "@pages";
 
 export const ColorsAndType: FC = () => {
   return (
-    <>
+    <LayoutUiKit>
       <ColorBox backgroundColor="var(--color-dark-shade-100)" />
       <ColorBox backgroundColor="var(--color-dark-shade-75)" />
       <ColorBox backgroundColor="var(--color-dark-shade-50)" />
@@ -12,7 +13,6 @@ export const ColorsAndType: FC = () => {
       <ColorBox backgroundColor="var(--color-dark-shade-5)" />
       <ColorBox backgroundColor="var(--color-purple)" />
       <ColorBox backgroundColor="var(--color-green)" />
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat accusantium, voluptates sit itaque odit adipisci reiciendis maiores alias, unde totam dolorem tempora, facere quis at officiis quo? Expedita, temporibus repellat.</p>
-    </>
+    </LayoutUiKit>
   );
 };
