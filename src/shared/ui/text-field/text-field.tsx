@@ -8,10 +8,9 @@ export const TextField: FC = () => {
     <>
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-controll"]} sx={{ "& fieldset": { border: "none" } }}>
-          <OutlinedInput className={styles.input} placeholder="Please enter text" />
+          <OutlinedInput className={styles.input} placeholder="Please enter text" sx={{ "& input": { paddingLeft: "15px", paddingBottom: "13px", paddingTop: "13px" } }} />
         </FormControl>
       </StyledEngineProvider>
-      ,
     </>
   );
 };
