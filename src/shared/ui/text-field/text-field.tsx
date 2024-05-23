@@ -1,14 +1,24 @@
 import { FC } from "react";
-import { clsx } from "clsx";
 import styles from "./text-field.module.scss";
 import { FormControl, OutlinedInput, StyledEngineProvider } from "@mui/material";
 
-export const TextField: FC = () => {
+type TextFieldProps = {
+  placeholder?: string;
+};
+export const TextField: FC<TextFieldProps> = ({ placeholder }) => {
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <FormControl className={styles["form-controll"]} sx={{ "& fieldset": { border: "none" } }}>
-          <OutlinedInput className={styles.input} placeholder="Please enter text" sx={{ "& input": { paddingLeft: "15px", paddingBottom: "13px", paddingTop: "13px" } }} />
+        <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
+          <OutlinedInput
+            className={styles.input}
+            placeholder={placeholder}
+            sx={{
+              "& input": {
+                padding: 0,
+              },
+            }}
+          />
         </FormControl>
       </StyledEngineProvider>
     </>
