@@ -19,6 +19,7 @@ export default defineConfig({
       "@entities": "/src/entities/index.ts",
       "@features": "/src/features/index.ts",
       "@pages": "/src/pages/index.ts",
+      "@shared": "/src/shared/index.ts",
     },
   },
 });

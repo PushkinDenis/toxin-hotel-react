@@ -1,11 +1,13 @@
 import { FC } from "react";
 import { clsx } from "clsx";
-import { ColorBox } from "@entities";
+import { LayoutUiKit } from "@pages";
+import { TextField } from "@shared";
+import { FormControl, OutlinedInput } from "@mui/material";
 
 export const FormElements: FC = () => {
   return (
-    <>
-      <ColorBox backgroundColor="var(--color-dark-shade-100)" />
-    </>
+    <LayoutUiKit>
+      <TextField />
+    </LayoutUiKit>
   );
 };

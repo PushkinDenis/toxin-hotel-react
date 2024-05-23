@@ -1,0 +1,14 @@
+@use "../../../variables.scss";
+.input {
+  box-sizing: border-box;
+  font-family: var(--font);
+  color: rebeccapurple;
+  border: 2px solid green;
+  &:hover {
+    border: 2px solid rebeccapurple;
+  }
+}
+.form-controll {
+  font-family: var(--font);
+  color: rebeccapurple;
+}
