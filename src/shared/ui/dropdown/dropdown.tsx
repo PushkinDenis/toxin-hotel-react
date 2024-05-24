@@ -1,5 +1,5 @@
 import { FC, useState } from "react";
-import styles from "./text-field.module.scss";
+import styles from "./dropdown.module.scss";
 import { FormControl, Select, StyledEngineProvider, MenuItem, FormHelperText, SelectChangeEvent } from "@mui/material";
 
 type DropdownProps = {
@@ -13,9 +13,19 @@ export const Dropdown: FC<DropdownProps> = ({ placeholder }) => {
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
+        <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
           <FormHelperText>Without label</FormHelperText>
-          <Select value={age} onChange={handleChange} displayEmpty inputProps={{ "aria-label": "Without label" }}>
+          <Select
+            className={styles.select}
+            value={age}
+            onChange={handleChange}
+            displayEmpty
+            sx={{
+              "& div": {
+                padding: 0,
+              },
+            }}
+          >
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
