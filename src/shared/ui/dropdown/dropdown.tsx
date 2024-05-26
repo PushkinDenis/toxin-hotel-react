@@ -1,48 +1,91 @@
-import { FC, useState } from "react";
-import styles from "./dropdown.module.scss";
-import { FormControl, FormHelperText, MenuItem, Select, SelectChangeEvent, StyledEngineProvider, SvgIcon } from "@mui/material";
-import { ExpandMore } from "@mui/icons-material";
+import * as React from "react";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import ListItemText from "@mui/material/ListItemText";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import { Counter } from "@shared";
 
-type DropdownProps = {
-  placeholder?: string;
+const ITEM_HEIGHT = 48;
+const ITEM_PADDING_TOP = 8;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+      width: 250,
+    },
+  },
 };
-export const Dropdown: FC<DropdownProps> = () => {
-  const [age, setAge] = useState("");
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+
+const names = ["Oliver Hansen", "Van Henry", "April Tucker", "Ralph Hubbard", "Omar Alexander", "Carlos Abbott", "Miriam Wagner", "Bradley Wilkerson", "Virginia Andrews", "Kelly Snyder"];
+
+export const Dropdown = () => {
+  const [personName, setPersonName] = React.useState<string[]>([]);
+
+  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
+    const {
+      target: { value },
+    } = event;
+    setPersonName(
+      // On autofill we get a stringified value.
+      typeof value === "string" ? value.split(",") : value,
+    );
   };
+
   return (
-    <>
-      <StyledEngineProvider injectFirst>
-        <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
-          <FormHelperText>Without label</FormHelperText>
-          <Select
-            IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
-            className={styles.select}
-            value={age}
-            onChange={handleChange}
-            displayEmpty
-            sx={{
-              "& div": {
-                padding: 0,
-              },
-            }}
-          >
-            <MenuItem value="" className={styles.menu}>
-              None
+    <div>
+      <FormControl sx={{ m: 1, width: 300 }}>
+        <InputLabel id="demo-multiple-checkbox-label">Tag</InputLabel>
+        <Select labelId="demo-multiple-checkbox-label" id="demo-multiple-checkbox" multiple value={personName} onChange={handleChange} input={<OutlinedInput label="Tag" />} renderValue={(selected) => selected.join(", ")} MenuProps={MenuProps}>
+          {names.map((name) => (
+            <MenuItem key={name} value={name}>
+              <Counter />
+              <ListItemText primary={name} />
             </MenuItem>
-            <MenuItem value={10} className={styles.menu}>
-              Ten
-            </MenuItem>
-            <MenuItem value={20} className={styles.menu}>
-              Twenty
-            </MenuItem>
-            <MenuItem value={30} className={styles.menu}>
-              Thirty
-            </MenuItem>
-          </Select>
-        </FormControl>
-      </StyledEngineProvider>
-    </>
+          ))}
+        </Select>
+      </FormControl>
+    </div>
   );
 };
+
+
+// import { FC } from "react";
+// import styles from "./dropdown.module.scss";
+// import { FormControl, FormHelperText, MenuItem, Select, StyledEngineProvider, SvgIcon } from "@mui/material";
+// import { ExpandMore } from "@mui/icons-material";
+// import { Counter } from "@shared";
+//
+// type DropdownProps = {
+//   placeholder?: string;
+// };
+// export const Dropdown: FC<DropdownProps> = () => {
+//   return (
+//     <>
+//       <StyledEngineProvider injectFirst>
+//         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
+//           <FormHelperText>Without label</FormHelperText>
+//           <Select
+//             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
+//             value={"hey"}
+//             className={styles.select}
+//             displayEmpty
+//             sx={{
+//               "& div": {
+//                 padding: 0,
+//               },
+//             }}
+//           >
+//             <MenuItem className={styles.menu} disableRipple>
+//               <Counter />
+//               <Counter />
+//               <Counter />
+//               <Counter />
+//             </MenuItem>
+//           </Select>
+//         </FormControl>
+//       </StyledEngineProvider>
+//     </>
+//   );
+// };
