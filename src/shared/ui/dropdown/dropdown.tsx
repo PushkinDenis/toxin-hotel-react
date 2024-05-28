@@ -13,6 +13,11 @@ import { ExpandMore } from "@mui/icons-material";
 type DropdownProps = {
   items: string[];
 };
+interface Cnt {
+  firstCnt: number | null;
+  secCnt: number | null;
+  thirdCnt: number | null;
+}
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -28,6 +33,7 @@ const MenuProps = {
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [personName, setPersonName] = React.useState<string[]>([]);
   const [val, setVal] = React.useState<number | null>(0);
+  const [totalVal, setTotalVal] = React.useState<any[]>([0, 0, 0]);
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {
@@ -46,17 +52,20 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
             multiple
-            value={[`${val}`]}
+            value={[`${totalVal}`]}
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
             renderValue={(selected) => selected.join(", ")}
             MenuProps={MenuProps}
           >
-            {items.map((item) => (
-              <MenuItem key={items} value={item}>
+            {items.map((item, index) => (
+              <MenuItem key={index} value={item}>
                 <Counter
                   onChange={(val) => {
                     setVal(val);
+                    items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
+                    items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
+                    items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
                   }}
                 />
                 <ListItemText primary={item} />
