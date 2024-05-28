@@ -27,6 +27,7 @@ const MenuProps = {
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [personName, setPersonName] = React.useState<string[]>([]);
+  const [val, setVal] = React.useState<number | null>(0);
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {
@@ -45,7 +46,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
             multiple
-            value={personName}
+            value={[`${val}`]}
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
             renderValue={(selected) => selected.join(", ")}
@@ -53,7 +54,11 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
           >
             {items.map((item) => (
               <MenuItem key={items} value={item}>
-                <Counter />
+                <Counter
+                  onChange={(val) => {
+                    setVal(val);
+                  }}
+                />
                 <ListItemText primary={item} />
               </MenuItem>
             ))}
