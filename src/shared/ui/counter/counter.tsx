@@ -33,7 +33,7 @@ export const NumberInput = React.forwardRef(function CustomNumberInput(props: Nu
 });
 
 export const Counter: React.FC<CounterProps> = ({ onChange }) => {
-  return <NumberInput aria-label="Quantity Input" min={1} max={99} onChange={(event, newValue) => onChange(newValue)} />;
+  return <NumberInput aria-label="Quantity Input" min={1} max={99} readOnly onChange={(event, newValue) => onChange(newValue)} />;
 };
 
 const blue = {

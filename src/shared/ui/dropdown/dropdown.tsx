@@ -52,7 +52,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
             multiple
-            value={[`${totalVal}`]}
+            value={[`Гостей: ${totalVal.reduce((accum, item) => (accum += item), 0)}`]}
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
             renderValue={(selected) => selected.join(", ")}
