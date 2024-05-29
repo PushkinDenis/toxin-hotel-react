@@ -60,6 +60,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
           >
             {items.map((item, index) => (
               <MenuItem key={index} value={item}>
+                <ListItemText primary={item} />
                 <Counter
                   onChange={(val) => {
                     setVal(val);
@@ -68,7 +69,6 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                     items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
                   }}
                 />
-                <ListItemText primary={item} />
               </MenuItem>
             ))}
           </Select>

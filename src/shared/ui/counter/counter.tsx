@@ -131,5 +131,14 @@ const StyledButton = styled("button")(
     background: ${theme.palette.mode === "dark" ? blue[700] : blue[500]};
     border-color: ${theme.palette.mode === "dark" ? blue[500] : blue[400]};
     color: ${grey[50]};
-  }`,
+  }
+
+  &:focus-visible {
+    outline: 0;
+  }
+
+  &.increment {
+    order: 1;
+  }
+`,
 );
