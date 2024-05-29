@@ -13,6 +13,7 @@ import { ExpandMore } from "@mui/icons-material";
 type DropdownProps = {
   items: string[];
 };
+
 interface Cnt {
   firstCnt: number | null;
   secCnt: number | null;
@@ -33,7 +34,7 @@ const MenuProps = {
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [personName, setPersonName] = React.useState<string[]>([]);
   const [val, setVal] = React.useState<number | null>(0);
-  const [totalVal, setTotalVal] = React.useState<any[]>([0, 0, 0]);
+  const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
 
   const handleChange = (event: SelectChangeEvent<typeof personName>) => {
     const {

@@ -7,8 +7,8 @@ export const App: FC = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/toxin-hotel-react/colors-and-type" element={<ColorsAndType />}></Route>
-        <Route path="/toxin-hotel-react/form-elments" element={<FormElements />}></Route>
-        <Route path="*" element={<App />}></Route>
+        <Route path="/toxin-hotel-react/form-elements" element={<FormElements />}></Route>
+        <Route path="*" element={<main />}></Route>
       </Routes>
     </BrowserRouter>
   );
