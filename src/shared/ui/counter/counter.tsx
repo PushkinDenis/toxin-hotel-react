@@ -3,6 +3,8 @@ import { NumberInputProps, Unstable_NumberInput as BaseNumberInput } from "@mui/
 import { styled } from "@mui/system";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
+import styles from "./counter.module.scss";
+import { clsx } from "clsx";
 
 type CounterProps = {
   onChange: (newValue: number | null) => void;
@@ -11,6 +13,7 @@ type CounterProps = {
 export const NumberInput = React.forwardRef(function CustomNumberInput(props: NumberInputProps, ref: React.ForwardedRef<HTMLDivElement>) {
   return (
     <BaseNumberInput
+      className={styles.input}
       slots={{
         root: StyledInputRoot,
         input: StyledInput,

@@ -24,6 +24,12 @@
 .menu {
   font-family: var(--font);
   width: 320px;
+  &:focus-within {
+    background-color: var(--color-white);
+  }
+  &:hover {
+    background-color: var(--color-white);
+  }
 }
 
 .item {
