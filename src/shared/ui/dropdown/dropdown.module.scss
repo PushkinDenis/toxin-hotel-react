@@ -10,6 +10,9 @@
   border-radius: 2px;
   padding: 13px 0 13px 15px;
 
+  &:ul {
+    padding: 0;
+  }
   &:hover {
     color: var(--color-dark-shade-50);
     border-color: var(--color-dark-shade-50);
@@ -22,8 +25,10 @@
 }
 
 .menu {
+  box-sizing: border-box;
   font-family: var(--font);
   width: 320px;
+  border-right: 1px solid black;
   &:focus-within {
     background-color: var(--color-white);
   }
@@ -46,7 +51,11 @@
 
 .menu-buttons {
   display: flex;
+  box-sizing: border-box;
   justify-content: space-between;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-radius: 0;
   & > button {
     font-weight: 400;
     padding: 0;

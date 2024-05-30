@@ -6,7 +6,7 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { Counter, Button } from "@shared";
-import { StyledEngineProvider, SvgIcon } from "@mui/material";
+import { Paper, StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
 
@@ -42,7 +42,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             labelId="demo-multiple-checkbox-label"
             id="demo-multiple-checkbox"
             multiple
-            value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum += item), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
+            value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
             renderValue={(selected) => selected.join(", ")}
@@ -61,7 +61,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               </MenuItem>
             ))}
             <MenuItem className={styles["menu-buttons"]}>
-              {totalVal.reduce((accum, item) => (accum += item), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
+              {totalVal.reduce((accum, item) => (accum! += item!), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
               <Button variant="text" text="ПРИМЕНИТЬ" />
             </MenuItem>
           </Select>
