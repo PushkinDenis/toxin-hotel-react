@@ -5,7 +5,7 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Counter } from "@shared";
+import { Counter, Button } from "@shared";
 import { StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
@@ -70,6 +70,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                     items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
                   }}
                 />
+                <Button variant="text" />
               </MenuItem>
             ))}
           </Select>
