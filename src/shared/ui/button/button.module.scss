@@ -1,5 +1,8 @@
 .text {
-  color: red;
+  color: var(--color-purple);
+  font-family: var(--font);
+  font-size: var(--font-h3);
+  line-height: var(--line-height-h3);
 }
 .outlined {
   color: rebeccapurple;

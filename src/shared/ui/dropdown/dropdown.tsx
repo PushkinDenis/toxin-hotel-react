@@ -70,9 +70,9 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                     items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
                   }}
                 />
-                <Button variant="text" />
               </MenuItem>
             ))}
+            <Button variant="text" text="ПРИМЕНИТЬ" />
           </Select>
         </FormControl>
       </StyledEngineProvider>

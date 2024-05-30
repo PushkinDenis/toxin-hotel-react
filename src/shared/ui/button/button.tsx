@@ -5,29 +5,27 @@ import styles from "./button.module.scss";
 type ButtonProps = {
   onClick?: () => void;
   variant: string;
+  text: string;
 };
 
-export const Button: React.FC<ButtonProps> = ({ variant }) => {
+export const Button: React.FC<ButtonProps> = ({ variant, text }) => {
   return (
     <StyledEngineProvider injectFirst>
       {variant === "text" && (
         <ButtonMui variant="text" className={styles.text}>
-          Text
+          {text}
         </ButtonMui>
       )}
-      ;
       {variant === "outlined" && (
         <ButtonMui variant="outlined" className={styles.outlined}>
-          Text
+          {text}
         </ButtonMui>
       )}
-      ;
       {variant === "contained" && (
         <ButtonMui variant="contained" className={styles.contained}>
-          Text
+          {text}
         </ButtonMui>
       )}
-      ;
     </StyledEngineProvider>
   );
 };
