@@ -9,10 +9,16 @@
   border: 1px solid var(--color-dark-shade-25);
   border-radius: 2px;
   padding: 13px 0 13px 15px;
+  z-index: 100;
 
-  &:ul {
-    padding: 0;
+  & > div {
+    z-index: 100
   }
+
+  & > input {
+    z-index: 100;
+  }
+
   &:hover {
     color: var(--color-dark-shade-50);
     border-color: var(--color-dark-shade-50);
@@ -28,10 +34,11 @@
   box-sizing: border-box;
   font-family: var(--font);
   width: 320px;
-  border-right: 1px solid black;
+
   &:focus-within {
     background-color: var(--color-white);
   }
+
   &:hover {
     background-color: var(--color-white);
   }
@@ -42,6 +49,7 @@
     font-family: var(--font);
   }
 }
+
 .icon {
   width: 24px;
   height: 24px;
@@ -52,12 +60,28 @@
 .menu-buttons {
   display: flex;
   box-sizing: border-box;
+  align-items: center;
   justify-content: space-between;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  align-content: center;
   border-radius: 0;
+
   & > button {
     font-weight: 400;
     padding: 0;
+  }
+}
+
+.paper {
+  width: 320px;
+  box-shadow: none;
+  border-radius: 0;
+  border: 1px solid var(--color-dark-shade-25);
+  box-sizing: border-box;
+  border-top: none;
+
+
+  & > ul {
+    padding: 0;
+
   }
 }

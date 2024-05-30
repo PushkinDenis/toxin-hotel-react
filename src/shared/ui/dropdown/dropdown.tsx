@@ -5,20 +5,14 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import { Counter, Button } from "@shared";
-import { Paper, StyledEngineProvider, SvgIcon } from "@mui/material";
+import { Button, Counter } from "@shared";
+import { StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
 
 type DropdownProps = {
   items: string[];
 };
-
-interface Cnt {
-  firstCnt: number | null;
-  secCnt: number | null;
-  thirdCnt: number | null;
-}
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [personName, setPersonName] = React.useState<string[]>([]);
@@ -45,6 +39,8 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
+            MenuProps={{ classes: { paper: styles.paper } }}
+            placeholder={"Всего гостей"}
             renderValue={(selected) => selected.join(", ")}
           >
             {items.map((item, index) => (

@@ -4,11 +4,13 @@
   width: 92px;
   justify-content: space-between;
 
+
   & > button {
     width: 30px;
     height: 30px;
     color: var(--color-dark-shade-25);
     background-color: var(--color-white);
+
     &:hover {
       background-color: var(--color-purple);
       border-color: var(--color-purple);
@@ -17,6 +19,7 @@
 
   & > input {
     outline: none;
+    text-align: center;
     border: 0;
     background-color: var(--color-white);
     box-shadow: none;
@@ -27,9 +30,11 @@
     line-height: 14px;
     font-family: var(--font);
     color: var(--color-dark-shade-100);
+
     &:focus-within {
       box-shadow: none;
     }
+
     &:active {
       outline: none;
       border: none;
