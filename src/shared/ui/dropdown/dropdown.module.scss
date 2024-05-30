@@ -21,17 +21,16 @@
   }
 }
 
-.form-control {
-  font-family: var(--font);
-}
-
 .menu {
   font-family: var(--font);
-  font-style: normal;
   width: 320px;
-  padding: 0;
 }
 
+.item {
+  & > span {
+    font-family: var(--font);
+  }
+}
 .icon {
   width: 24px;
   height: 24px;
@@ -39,6 +38,11 @@
   margin-right: 10px;
 }
 
-.menu > button {
-  font-weight: normal;
+.menu-buttons {
+  display: flex;
+  justify-content: space-between;
+  & > button {
+    font-weight: 400;
+    padding: 0;
+  }
 }

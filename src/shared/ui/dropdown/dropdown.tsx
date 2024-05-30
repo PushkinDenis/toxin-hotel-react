@@ -20,17 +20,6 @@ interface Cnt {
   thirdCnt: number | null;
 }
 
-const ITEM_HEIGHT = 48;
-const ITEM_PADDING_TOP = 8;
-const MenuProps = {
-  PaperProps: {
-    style: {
-      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-      width: 250,
-    },
-  },
-};
-
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [personName, setPersonName] = React.useState<string[]>([]);
   const [val, setVal] = React.useState<number | null>(0);
@@ -57,11 +46,10 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
             onChange={handleChange}
             input={<OutlinedInput label="Tag" />}
             renderValue={(selected) => selected.join(", ")}
-            MenuProps={MenuProps}
           >
             {items.map((item, index) => (
-              <MenuItem key={index} value={item}>
-                <ListItemText primary={item} />
+              <MenuItem key={index} value={item} className={styles.menu}>
+                <ListItemText primary={item} className={styles.item} />
                 <Counter
                   onChange={(val) => {
                     setVal(val);
@@ -72,7 +60,10 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                 />
               </MenuItem>
             ))}
-            <Button variant="text" text="ПРИМЕНИТЬ" />
+            <MenuItem className={styles["menu-buttons"]}>
+              {totalVal.reduce((accum, item) => (accum += item), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
+              <Button variant="text" text="ПРИМЕНИТЬ" />
+            </MenuItem>
           </Select>
         </FormControl>
       </StyledEngineProvider>
