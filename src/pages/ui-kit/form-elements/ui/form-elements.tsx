@@ -8,7 +8,7 @@ export const FormElements: FC = () => {
       <TextField placeholder={"Email"} />
       <TextField placeholder={"Email"} />
       <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
-      <Dropdown items={["Кровать", "Диван", "Спальня"]} />
+      <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
     </LayoutUiKit>
   );
 };
