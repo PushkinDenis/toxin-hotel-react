@@ -5,6 +5,7 @@ import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./counter.module.scss";
 import { clsx } from "clsx";
+import { colors } from "@mui/material";
 
 type CounterProps = {
   onChange: (newValue: number | null) => void;
@@ -16,7 +17,6 @@ export const NumberInput = React.forwardRef(function CustomNumberInput(props: Nu
       className={styles.input}
       slots={{
         root: StyledInputRoot,
-
         incrementButton: StyledButton,
         decrementButton: StyledButton,
       }}

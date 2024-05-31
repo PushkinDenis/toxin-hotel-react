@@ -9,6 +9,7 @@ import { Button, Counter } from "@shared";
 import { StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
+import { clsx } from "clsx";
 
 type DropdownProps = {
   items: string[];
@@ -30,37 +31,67 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
     <>
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
-          <Select
-            IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
-            className={styles.select}
-            labelId="demo-multiple-checkbox-label"
-            id="demo-multiple-checkbox"
-            multiple
-            value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
-            onChange={handleChange}
-            input={<OutlinedInput label="Tag" />}
-            MenuProps={{ classes: { paper: styles.paper } }}
-            placeholder={"Всего гостей"}
-            renderValue={(selected) => selected.join(", ")}
-          >
-            {items.map((item, index) => (
-              <MenuItem key={index} value={item} className={styles.menu}>
-                <ListItemText primary={item} className={styles.item} />
-                <Counter
-                  onChange={(val) => {
-                    setVal(val);
-                    items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
-                    items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
-                    items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
-                  }}
-                />
+          {items[0] === "ВЗРОСЛЫЕ" && items[1] && "ДЕТИ" && items[2] === "МЛАДЕНЦЫ" ? (
+            <Select
+              IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
+              className={styles.select}
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
+              multiple
+              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
+              onChange={handleChange}
+              input={<OutlinedInput label="Tag" />}
+              MenuProps={{ classes: { paper: styles.paper } }}
+              placeholder={"Всего гостей"}
+              renderValue={(selected) => selected.join(", ")}
+            >
+              {items.map((item, index) => (
+                <MenuItem key={index} value={item} className={styles.menu}>
+                  <ListItemText primary={item} className={styles.item} />
+                  <Counter
+                    onChange={(val) => {
+                      setVal(val);
+                      items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
+                      items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
+                      items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
+                    }}
+                  />
+                </MenuItem>
+              ))}
+              <MenuItem className={styles["menu-buttons"]}>
+                {totalVal.reduce((accum, item) => (accum! += item!), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
+                <Button variant="text" text="ПРИМЕНИТЬ" />
               </MenuItem>
-            ))}
-            <MenuItem className={styles["menu-buttons"]}>
-              {totalVal.reduce((accum, item) => (accum! += item!), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
-              <Button variant="text" text="ПРИМЕНИТЬ" />
-            </MenuItem>
-          </Select>
+            </Select>
+          ) : (
+            <Select
+              IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
+              className={clsx(styles["select-small"], styles.select)}
+              labelId="demo-multiple-checkbox-label"
+              id="demo-multiple-checkbox"
+              multiple
+              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
+              onChange={handleChange}
+              input={<OutlinedInput label="Tag" />}
+              MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) } }}
+              placeholder={"Всего гостей"}
+              renderValue={(selected) => selected.join(", ")}
+            >
+              {items.map((item, index) => (
+                <MenuItem key={index} value={item} className={clsx(styles.menu, styles["menu-small"])}>
+                  <ListItemText primary={item} className={styles.item} />
+                  <Counter
+                    onChange={(val) => {
+                      setVal(val);
+                      items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
+                      items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
+                      items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
+                    }}
+                  />
+                </MenuItem>
+              ))}
+            </Select>
+          )}
         </FormControl>
       </StyledEngineProvider>
     </>
