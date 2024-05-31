@@ -70,7 +70,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               labelId="demo-multiple-checkbox-label"
               id="demo-multiple-checkbox"
               multiple
-              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
+              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} спальни, ${totalVal[1]} кровати, ${totalVal[2]} ванных комнаты`]}
               onChange={handleChange}
               input={<OutlinedInput label="Tag" />}
               MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) } }}
