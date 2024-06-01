@@ -7,10 +7,11 @@ type LayoutUiKitProps = {
 };
 
 export const LayoutUiKit: FC<LayoutUiKitProps> = ({ children }) => {
+  console.log(true);
   return (
     <>
       <div className={clsx(styles.wrapper)}>
-        <img src="./public/icons/ui-kit-icon.svg" alt="icon" />
+        <img src="./icons/ui-kit-icon.svg" alt="icon" />
         <main>{children}</main>
       </div>
     </>
