@@ -26,6 +26,18 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
     } = event;
     setPersonName(typeof value === "string" ? value.split(",") : value);
   };
+  const handleValue = () => {
+    if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
+      return ["Сколько гостей"];
+    } else if (items[0] === "ВЗРОСЛЫЕ" && items[1] === "ДЕТИ" && items[2] === "МЛАДЕНЦЫ") {
+      return [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`];
+    } else if (items[0] === "СПАЛЬНИ" && items[1] === "КРОВАТИ" && items[2] === "ВАННЫЕ КОМНАТЫ") {
+      return [`${totalVal[0]} спальни, ${totalVal[1]} кровати, ${totalVal[2]} ванных комнаты`];
+    } else {
+      console.log(val);
+      return;
+    }
+  };
 
   return (
     <>
@@ -38,7 +50,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               labelId="demo-multiple-checkbox-label"
               id="demo-multiple-checkbox"
               multiple
-              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} кровати, ${totalVal[1]} дивана`]}
+              value={handleValue()}
               onChange={handleChange}
               input={<OutlinedInput label="Tag" />}
               MenuProps={{ classes: { paper: styles.paper } }}
@@ -70,7 +82,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               labelId="demo-multiple-checkbox-label"
               id="demo-multiple-checkbox"
               multiple
-              value={items[0] === "ВЗРОСЛЫЕ" ? [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`] : [`${totalVal[0]} спальни, ${totalVal[1]} кровати, ${totalVal[2]} ванных комнаты`]}
+              value={handleValue()}
               onChange={handleChange}
               input={<OutlinedInput label="Tag" />}
               MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) } }}

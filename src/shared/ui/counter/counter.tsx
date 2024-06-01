@@ -4,8 +4,6 @@ import { styled } from "@mui/system";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./counter.module.scss";
-import { clsx } from "clsx";
-import { colors } from "@mui/material";
 
 type CounterProps = {
   onChange: (newValue: number | null) => void;
@@ -36,7 +34,7 @@ export const NumberInput = React.forwardRef(function CustomNumberInput(props: Nu
 });
 
 export const Counter: React.FC<CounterProps> = ({ onChange }) => {
-  return <NumberInput aria-label="Quantity Input" defaultValue={0} min={0} max={99} readOnly onChange={(event, newValue) => onChange(newValue)} />;
+  return <NumberInput aria-label="Quantity Input" defaultValue={0} min={0} max={99} readOnly onChange={(_event, newValue) => onChange(newValue)} />;
 };
 
 const blue = {
