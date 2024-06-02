@@ -3,16 +3,16 @@ import { Button as ButtonMui, StyledEngineProvider } from "@mui/material";
 import styles from "./button.module.scss";
 
 type ButtonProps = {
-  onClick?: () => void;
+  onClick: () => void;
   variant: string;
   text: string;
 };
 
-export const Button: React.FC<ButtonProps> = ({ variant, text }) => {
+export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
   return (
     <StyledEngineProvider injectFirst>
       {variant === "text" && (
-        <ButtonMui variant="text" className={styles.text}>
+        <ButtonMui variant="text" className={styles.text} onClick={onClick}>
           {text}
         </ButtonMui>
       )}

@@ -16,8 +16,9 @@ type DropdownProps = {
 };
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
-  const [val] = React.useState<number | null>(0);
+  const [val, setVal] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
+  const [open, setOpen] = React.useState(true);
 
   const handleValue = () => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
@@ -36,13 +37,26 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
     newTotalVal[index] = value;
     setTotalVal(newTotalVal);
   };
+  const handleCancel = () => {
+    const newTotalVal = [...totalVal];
+    setTotalVal([0, 0, 0]);
+  };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
   return (
     <>
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
           {items[0] === "ВЗРОСЛЫЕ" && items[1] && "ДЕТИ" && items[2] === "МЛАДЕНЦЫ" ? (
             <Select
+              open={open}
+              onOpen={handleOpen}
+              onClose={handleClose}
               IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
               className={styles.select}
               labelId="demo-multiple-checkbox-label"
@@ -67,8 +81,8 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                 </MenuItem>
               ))}
               <MenuItem className={styles["menu-buttons"]}>
-                {totalVal.reduce((accum, item) => (accum! += item!), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" /> : <div></div>}
-                <Button variant="text" text="ПРИМЕНИТЬ" />
+                {totalVal.reduce((accum, item) => (accum! += item!), 0) !== 0 ? <Button variant="text" text="ОЧИСТИТЬ" onClick={handleCancel} /> : <div></div>}
+                <Button variant="text" text="ПРИМЕНИТЬ" onClick={handleClose} />
               </MenuItem>
             </Select>
           ) : (
