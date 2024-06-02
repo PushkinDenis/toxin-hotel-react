@@ -7,6 +7,7 @@ import styles from "./counter.module.scss";
 
 type CounterProps = {
   onChange: (newValue: number | null) => void;
+  initialValue: number | null;
 };
 
 export const NumberInput = React.forwardRef(function CustomNumberInput(props: NumberInputProps, ref: React.ForwardedRef<HTMLDivElement>) {
@@ -33,8 +34,13 @@ export const NumberInput = React.forwardRef(function CustomNumberInput(props: Nu
   );
 });
 
-export const Counter: React.FC<CounterProps> = ({ onChange }) => {
-  return <NumberInput aria-label="Quantity Input" defaultValue={0} min={0} max={99} readOnly onChange={(_event, newValue) => onChange(newValue)} />;
+export const Counter: React.FC<CounterProps> = ({ onChange, initialValue }) => {
+  const [value, setValue] = React.useState(initialValue);
+  const handleVal = (value: number) => {
+    setValue(value);
+    onChange(value);
+  };
+  return <NumberInput value={value} aria-label="Quantity Input" min={0} defaultValue={initialValue} max={99} readOnly onChange={(_event, newValue) => handleVal(newValue!)} />;
 };
 
 const blue = {

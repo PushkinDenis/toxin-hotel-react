@@ -4,7 +4,7 @@ import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Select from "@mui/material/Select";
 import { Button, Counter } from "@shared";
 import { StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
@@ -16,16 +16,9 @@ type DropdownProps = {
 };
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
-  const [personName, setPersonName] = React.useState<string[]>([]);
-  const [val, setVal] = React.useState<number | null>(0);
+  const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
 
-  const handleChange = (event: SelectChangeEvent<typeof personName>) => {
-    const {
-      target: { value },
-    } = event;
-    setPersonName(typeof value === "string" ? value.split(",") : value);
-  };
   const handleValue = () => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
       return ["Сколько гостей"];
@@ -37,6 +30,11 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
       console.log(val);
       return;
     }
+  };
+  const handleCounterChange = (index: number, value: number | null) => {
+    const newTotalVal = [...totalVal];
+    newTotalVal[index] = value;
+    setTotalVal(newTotalVal);
   };
 
   return (
@@ -51,7 +49,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               id="demo-multiple-checkbox"
               multiple
               value={handleValue()}
-              onChange={handleChange}
+              onChange={handleValue}
               input={<OutlinedInput label="Tag" />}
               MenuProps={{ classes: { paper: styles.paper } }}
               placeholder={"Всего гостей"}
@@ -61,11 +59,9 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                 <MenuItem key={index} value={item} className={styles.menu}>
                   <ListItemText primary={item} className={styles.item} />
                   <Counter
+                    initialValue={totalVal[index]}
                     onChange={(val) => {
-                      setVal(val);
-                      items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
-                      items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
-                      items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
+                      handleCounterChange(index, val);
                     }}
                   />
                 </MenuItem>
@@ -83,7 +79,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
               id="demo-multiple-checkbox"
               multiple
               value={handleValue()}
-              onChange={handleChange}
+              onChange={handleValue}
               input={<OutlinedInput label="Tag" />}
               MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) } }}
               placeholder={"Всего гостей"}
@@ -93,11 +89,9 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
                 <MenuItem key={index} value={item} className={clsx(styles.menu, styles["menu-small"])}>
                   <ListItemText primary={item} className={styles.item} />
                   <Counter
+                    initialValue={totalVal[index]}
                     onChange={(val) => {
-                      setVal(val);
-                      items[0] === item ? setTotalVal([val, totalVal[1], totalVal[2]]) : totalVal;
-                      items[1] === item ? setTotalVal([totalVal[0], val, totalVal[2]]) : totalVal;
-                      items[2] === item ? setTotalVal([totalVal[0], totalVal[1], val]) : totalVal;
+                      handleCounterChange(index, val);
                     }}
                   />
                 </MenuItem>
