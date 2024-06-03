@@ -18,7 +18,7 @@ type DropdownProps = {
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
   const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
 
   const handleValue = () => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
