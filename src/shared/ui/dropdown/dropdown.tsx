@@ -16,7 +16,7 @@ type DropdownProps = {
 };
 
 export const Dropdown: FC<DropdownProps> = ({ items }) => {
-  const [val, setVal] = React.useState<number | null>(0);
+  const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
   const [open, setOpen] = React.useState(true);
 
