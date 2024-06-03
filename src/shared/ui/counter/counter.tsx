@@ -36,6 +36,9 @@ export const NumberInput = React.forwardRef(function CustomNumberInput(props: Nu
 
 export const Counter: React.FC<CounterProps> = ({ onChange, initialValue }) => {
   const [value, setValue] = React.useState(initialValue);
+  React.useEffect(() => {
+    setValue(initialValue);
+  }, [initialValue]);
   const handleVal = (value: number) => {
     setValue(value);
     onChange(value);

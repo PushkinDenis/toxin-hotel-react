@@ -37,8 +37,8 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
     newTotalVal[index] = value;
     setTotalVal(newTotalVal);
   };
+
   const handleCancel = () => {
-    const newTotalVal = [...totalVal];
     setTotalVal([0, 0, 0]);
   };
 
