@@ -4,9 +4,9 @@
 }
 
 .mantineDatePickerCalendarHeader {
+  margin: 0;
   margin-top: 20px;
   max-width: 320px;
-  min-width: 320px;
   line-height: 24px;
   font-weight: 700;
   color: var(--color-dark-shade-100);
@@ -18,12 +18,13 @@
 }
 
 .mantineDatePickerDay {
+  border: 1px solid var(--color-dark-shade-25);
   color: var(--color-dark-shade-50);
   border-radius: 50%;
   font-size: 12px;
+  padding: 0;
   width: 40px;
   height: 40px;
-  padding: 0;
   &:hover {
     background-color: #ddd;
   }
@@ -33,6 +34,11 @@
   color: #fff;
 }
 
+td[data-with-spacing] {
+  padding: 0;
+  text-align: center;
+}
+
 div[data-month-level] {
   font-family: var(--font);
   width: 320px;
@@ -40,40 +46,24 @@ div[data-month-level] {
   border: 1px solid var(--color-dark-shade-25);
   border-radius: 2px;
   & > td {
-    width: 40px;
-    height: 40px;
+    padding: 0;
+    text-align: center;
   }
   & > button {
     font-size: 12px;
-    max-width: 40px;
-    max-height: 40px;
+    width: 40px;
+    height: 40px;
   }
 
   & > table {
-    width: 320px;
-    max-width: 320px;
-    min-width: 320px;
+    width: 100%;
   }
-}
-
-.table {
-  width: 320px;
-  max-width: 320px;
-  min-width: 320px;
-}
-
-.mantine-DatePicker-month {
-  width: 320px;
-  max-width: 320px;
-  min-width: 320px;
 }
 
 .mantineDatePickerweekday {
   & > th {
     box-sizing: border-box;
     color: var(--color-purple);
-    width: 40px;
-    height: 40px;
     padding: 0;
     font-weight: 700;
   }
