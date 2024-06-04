@@ -5,6 +5,7 @@ import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
 import "dayjs/locale/ru";
 import styles from "./daterange-picker.module.scss";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 interface CustomDatePickerProps {
   classNames?: {
@@ -19,15 +20,17 @@ interface CustomDatePickerProps {
 }
 
 export const Demo: FC<CustomDatePickerProps> = (props) => {
-  const [value] = useState<[Date | null, Date | null]>([null, null]);
+  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   return (
     <MantineProvider>
       <DatesProvider settings={{ locale: "ru" }}>
         <DatePicker
+          previousIcon={<ArrowBack sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
+          nextIcon={<ArrowForward sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
           type="range"
           value={value}
-          onChange={(value) => console.log(value)}
+          onChange={setValue}
           classNames={{
             wrapper: styles.mantineDatePickerWrapper,
             calendarHeader: styles.mantineDatePickerCalendarHeader,
