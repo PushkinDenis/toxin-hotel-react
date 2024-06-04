@@ -35,17 +35,14 @@
     color: var(--color-white);
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   }
-  &:focus {
+  &:focus-within {
     color: var(--color-white);
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   }
-  &:focus-within {
-    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-  }
 }
+
 button[data-in-range] {
-  color: var(--color-white);
-  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  background: #e4e8fe;
   border-radius: 0;
 }
 .mantineDatePickerDaySelected {
@@ -54,8 +51,66 @@ button[data-in-range] {
 }
 
 td[data-with-spacing] {
-  padding: 0;
+  padding: 20;
   text-align: center;
+  & button[data-first-in-range] {
+    position: relative;
+    color: var(--color-white);
+    background-color: none;
+    z-index: 200;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    &:hover {
+      background: #e4e8fe;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    &:focus {
+      background: #e4e8fe;
+      border-top-left-radius: 50%;
+      border-bottom-left-radius: 50%;
+    }
+    &::before {
+      position: absolute;
+      z-index: -100;
+      color: #ffffff;
+      content: "";
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 50%;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+    }
+  }
+  & button[data-last-in-range] {
+    position: relative;
+    color: var(--color-white);
+    background-color: none;
+    z-index: 200;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    &:hover {
+      background: #e4e8fe;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    &:focus {
+      background: #e4e8fe;
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+    &::before {
+      position: absolute;
+      z-index: -100;
+      color: #ffffff;
+      content: "";
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 50%;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+    }
+  }
 }
 
 div[data-month-level] {
