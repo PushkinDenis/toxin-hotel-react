@@ -14,6 +14,7 @@ interface CustomDatePickerProps {
     day?: string;
     daySelected?: string;
     tbody?: string;
+    weekdaysRow?: string;
   };
 }
 
@@ -33,6 +34,7 @@ export const Demo: FC<CustomDatePickerProps> = (props) => {
             calendarHeaderLevel: styles.mantineDatePickerCalendarHeaderLevel,
             day: styles.mantineDatePickerDay,
             daySelected: styles.mantineDatePickerDaySelected,
+            weekdaysRow: styles.mantineDatePickerweekday,
             tbody: styles["mantine-DatePicker-month"],
           }}
           {...props}
