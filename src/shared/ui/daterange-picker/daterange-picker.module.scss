@@ -71,7 +71,7 @@ button[data-in-range] {
 }
 
 td[data-with-spacing] {
-  padding: 20;
+  padding: 0;
   text-align: center;
   & button[data-first-in-range] {
     position: relative;
@@ -159,9 +159,51 @@ div[data-month-level] {
     color: var(--color-purple);
     padding: 0;
     font-weight: 700;
+    width: 40px;
+    height: 40px;
   }
 }
 
 .icon {
   color: var(--color-purple);
+}
+
+div[data-calendar] {
+  font-family: var(--font);
+}
+div[data-year-level] {
+  width: 280px;
+  margin: 0 auto;
+  & > div:first-child {
+    & > button:nth-child(1) {
+      margin-left: 0;
+    }
+    & > button:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+  & > table button[data-picker-control] {
+    margin: 0 auto;
+    color: var(--color-dark-shade-50);
+  }
+  & > table {
+    margin: 0 auto;
+  }
+}
+div[data-decade-level] {
+  width: 280px;
+  margin: 0 auto;
+  & > div:first-child {
+    & > button:nth-child(1) {
+      margin-left: 0;
+    }
+    & > button:nth-child(3) {
+      margin-right: 0;
+    }
+  }
+  & > table,
+  button {
+    margin: 0 auto;
+    color: var(--color-dark-shade-50);
+  }
 }
