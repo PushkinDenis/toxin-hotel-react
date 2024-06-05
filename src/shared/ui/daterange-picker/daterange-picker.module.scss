@@ -1,6 +1,26 @@
-.mantineDatePickerWrapper {
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   width: 320px;
   height: 369px;
+  border: 1px solid var(--color-dark-shade-25);
+  border-radius: 5px;
+}
+.buttons-wrapper {
+  display: flex;
+  margin: 20px;
+  padding: 0;
+  justify-content: space-between;
+  & > button {
+    font-weight: 700;
+    padding: 0;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}
+.mantineDatePickerWrapper {
+  width: 320px;
 }
 
 .mantineDatePickerCalendarHeader {
@@ -116,8 +136,6 @@ td[data-with-spacing] {
 div[data-month-level] {
   font-family: var(--font);
   width: 320px;
-  height: 369px;
-  border: 1px solid var(--color-dark-shade-25);
   border-radius: 2px;
   & > td {
     padding: 0;
