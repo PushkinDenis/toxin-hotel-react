@@ -20,7 +20,7 @@ interface CustomDatePickerProps {
   };
 }
 
-export const Demo: FC<CustomDatePickerProps> = (props) => {
+export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   return (
