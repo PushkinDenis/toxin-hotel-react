@@ -1,14 +1,17 @@
 import { FC, useState } from "react";
 import styles from "./text-field.module.scss";
-import { FormControl, OutlinedInput, StyledEngineProvider } from "@mui/material";
+import { FormControl, OutlinedInput, StyledEngineProvider, SvgIcon, InputAdornment } from "@mui/material";
 import clsx from "clsx";
+import { ExpandMore } from "@mui/icons-material";
 
 type TextFieldProps = {
   placeholder?: string;
   onClick?: (open: boolean) => void;
   type?: string;
+  icon?: boolean;
+  value?: string | undefined;
 };
-export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type }) => {
+export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, value }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleOpen = () => {
@@ -27,7 +30,15 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type }) =>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
           <OutlinedInput
             onClick={handleOpen}
+            value={value}
             className={type === "date" ? clsx(styles.input, styles.input_date) : styles.input}
+            endAdornment={
+              type === "date" ? (
+                <InputAdornment position="end" className={styles.icon}>
+                  <ExpandMore />
+                </InputAdornment>
+              ) : undefined
+            }
             placeholder={placeholder}
             sx={{
               "& input": {

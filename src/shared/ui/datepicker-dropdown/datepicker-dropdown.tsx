@@ -12,8 +12,8 @@ export const DatePickerDropdown: FC = () => {
   return (
     <>
       <div className={styles["inputs-wrapper"]}>
-        <TextField onClick={handleOpen} type={"date"} />
-        <TextField onClick={handleOpen} type={"date"} />
+        <TextField onClick={handleOpen} type={"date"} placeholder={"Дата"} />
+        <TextField onClick={handleOpen} type={"date"} placeholder={"Дата"} />
       </div>
       {open ? <RangeDatePicker /> : false}
     </>
