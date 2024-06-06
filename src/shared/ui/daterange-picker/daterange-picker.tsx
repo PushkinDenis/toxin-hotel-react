@@ -1,5 +1,5 @@
 import { DatePicker, DatesProvider } from "@mantine/dates";
-import { FC, useState } from "react";
+import { FC } from "react";
 import { MantineProvider } from "@mantine/core";
 import "@mantine/core/styles.css";
 import "@mantine/dates/styles.css";
@@ -18,10 +18,16 @@ interface CustomDatePickerProps {
     tbody?: string;
     weekdaysRow?: string;
   };
+  val: [Date | null, Date | null];
+  onChange?: (value: [Date | null, Date | null]) => void;
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
-  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
+  const { val, onChange } = props;
+
+  const handleValue = (newValue: [Date | null, Date | null]) => {
+    onChange!(newValue);
+  };
 
   return (
     <MantineProvider>
@@ -31,8 +37,8 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
             previousIcon={<ArrowBack sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             nextIcon={<ArrowForward sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             type="range"
-            value={value}
-            onChange={setValue}
+            value={val}
+            onChange={handleValue}
             classNames={{
               wrapper: styles.mantineDatePickerWrapper,
               calendarHeader: styles.mantineDatePickerCalendarHeader,

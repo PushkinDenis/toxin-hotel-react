@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import styles from "./text-field.module.scss";
-import { FormControl, OutlinedInput, StyledEngineProvider, SvgIcon, InputAdornment } from "@mui/material";
+import { FormControl, OutlinedInput, StyledEngineProvider, InputAdornment } from "@mui/material";
 import clsx from "clsx";
 import { ExpandMore } from "@mui/icons-material";
 
