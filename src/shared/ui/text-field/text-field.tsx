@@ -29,6 +29,7 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
           <OutlinedInput
+            readOnly={type === "date" ? true : false}
             onClick={handleOpen}
             value={value}
             className={type === "date" ? clsx(styles.input, styles.input_date) : styles.input}

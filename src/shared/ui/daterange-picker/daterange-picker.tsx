@@ -28,7 +28,6 @@ interface CustomDatePickerProps {
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
   const { val, onChange, onClick } = props;
   const [open, setOpen] = useState<boolean>(false);
-
   const handleValue = (newValue: [Date | null, Date | null]) => {
     onChange!(newValue);
   };
@@ -55,7 +54,13 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
             {...props}
           />
           <div className={styles["buttons-wrapper"]}>
-            <Button variant="text" text="ОЧИСТИТЬ" onClick={() => {}} />
+            <Button
+              variant="text"
+              text="ОЧИСТИТЬ"
+              onClick={() => {
+                alert("tgu");
+              }}
+            />
             <Button
               variant="text"
               text="ПРИМЕНИТЬ"
