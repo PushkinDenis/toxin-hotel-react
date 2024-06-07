@@ -16,10 +16,10 @@ export const DatePickerDropdown: FC = () => {
   return (
     <>
       <div className={styles["inputs-wrapper"]}>
-        <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value[0] ? parseDate(`${value[0]}`) : ""} />
-        <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value[1] ? parseDate(`${value[1]}`) : ""} />
+        <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? parseDate(`${value[0]}`) : ""} />
+        <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? parseDate(`${value[1]}`) : ""} />
       </div>
-      {open ? <RangeDatePicker val={value} onChange={handleValueChange} onClick={(open) => setOpen(open)} open={open} /> : false}
+      {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
     </>
   );
 };

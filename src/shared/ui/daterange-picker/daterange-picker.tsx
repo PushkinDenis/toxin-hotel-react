@@ -19,17 +19,24 @@ interface CustomDatePickerProps {
     weekdaysRow?: string;
   };
   val: [Date | null, Date | null];
-  //@ts-ignore
-  onClick: (open?) => void;
-  open: any;
+  open?: any;
   onChange?: (value: [Date | null, Date | null]) => void;
+  handleClose?: (buttonprop: any) => void;
+  handleVal?: (buttonprop: any) => void;
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
-  const { val, onChange, onClick } = props;
-  const [open, setOpen] = useState<boolean>(false);
+  const { val, onChange, handleClose, handleVal } = props;
+  const [_open, setOpen] = useState<boolean>(false);
+  const [valu, setValu] = useState([null, null]);
   const handleValue = (newValue: [Date | null, Date | null]) => {
     onChange!(newValue);
+  };
+  const onFirstButt = () => {
+    handleClose!(setOpen(false));
+  };
+  const onSecButt = () => {
+    handleVal!(setValu(valu));
   };
 
   return (
@@ -54,20 +61,8 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
             {...props}
           />
           <div className={styles["buttons-wrapper"]}>
-            <Button
-              variant="text"
-              text="ОЧИСТИТЬ"
-              onClick={() => {
-                alert("tgu");
-              }}
-            />
-            <Button
-              variant="text"
-              text="ПРИМЕНИТЬ"
-              onClick={() => {
-                onClick(setOpen(open));
-              }}
-            />
+            <Button variant="text" text="ОЧИСТИТЬ" onClick={onSecButt} />
+            <Button variant="text" text="ПРИМЕНИТЬ" onClick={onFirstButt} />
           </div>
         </DatesProvider>
       </div>
