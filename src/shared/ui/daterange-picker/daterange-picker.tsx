@@ -19,13 +19,15 @@ interface CustomDatePickerProps {
     weekdaysRow?: string;
   };
   val: [Date | null, Date | null];
-  onClick: () => void;
+  //@ts-ignore
+  onClick: (open?) => void;
+  open: any;
   onChange?: (value: [Date | null, Date | null]) => void;
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
   const { val, onChange, onClick } = props;
-  const [setOpen] = useState<boolean>(false);
+  const [open, setOpen] = useState<boolean>(false);
 
   const handleValue = (newValue: [Date | null, Date | null]) => {
     onChange!(newValue);
@@ -58,8 +60,7 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
               variant="text"
               text="ПРИМЕНИТЬ"
               onClick={() => {
-                setOpen;
-                onClick();
+                onClick(setOpen(open));
               }}
             />
           </div>

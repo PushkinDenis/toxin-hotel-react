@@ -3,7 +3,8 @@ import { Button as ButtonMui, StyledEngineProvider } from "@mui/material";
 import styles from "./button.module.scss";
 
 type ButtonProps = {
-  onClick: () => void;
+  //@ts-ignore
+  onClick: (value?) => void;
   variant: string;
   text: string;
 };

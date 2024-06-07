@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, RangeDatePicker, DatePickerDropdown } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown } from "@shared";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
