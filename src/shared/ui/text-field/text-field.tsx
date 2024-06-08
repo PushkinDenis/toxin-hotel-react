@@ -39,7 +39,7 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
     }
   };
 
-  const hendleEndAdornment = () => {
+  const handleEndAdornment = () => {
     if (type === "date" || type === "date-wide") {
       return (
         <InputAdornment position="end" className={styles.icon}>
@@ -60,11 +60,11 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
           <OutlinedInput
-            readOnly={type === "date" || type === "date-wide" ? true : false}
+            readOnly={type === "date" || type === "date-wide"}
             onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}
             value={value}
             className={handleClass()}
-            endAdornment={hendleEndAdornment()}
+            endAdornment={handleEndAdornment()}
             placeholder={placeholder}
             sx={{
               "& input": {

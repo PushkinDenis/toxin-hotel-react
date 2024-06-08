@@ -24,7 +24,7 @@ export const Dropdown: FC<DropdownProps> = ({ items }) => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
       return ["Сколько гостей"];
     } else if (items[0] === "ВЗРОСЛЫЕ" && items[1] === "ДЕТИ" && items[2] === "МЛАДЕНЦЫ") {
-      return [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)}`];
+      return [`Гостей: ${totalVal.reduce((accum, item) => (accum! += item!), 0)} ${totalVal[2] !== 0 ? `, ${totalVal[2]} младен${totalVal[2]! > 1 ? "цев" : "ец"}` : ""}`];
     } else if (items[0] === "СПАЛЬНИ" && items[1] === "КРОВАТИ" && items[2] === "ВАННЫЕ КОМНАТЫ") {
       return [`${totalVal[0]} спальни, ${totalVal[1]} кровати, ${totalVal[2]} ванных комнаты`];
     } else {
