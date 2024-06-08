@@ -61,11 +61,8 @@
   height: 40px;
 
   &:hover {
-    &::before {
-      color: var(--color-white);
-      background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
-      border-radius: 50%;
-    }
+    color: (var(--color-white));
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
   }
 
   &:focus-within {
@@ -133,6 +130,7 @@ td[data-with-spacing] {
       background: #e4e8fe;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
+
     }
 
     &:focus {
