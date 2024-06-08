@@ -2,7 +2,7 @@ import { FC, useState } from "react";
 import styles from "./text-field.module.scss";
 import { FormControl, OutlinedInput, StyledEngineProvider, InputAdornment } from "@mui/material";
 import clsx from "clsx";
-import { ExpandMore } from "@mui/icons-material";
+import { ExpandMore, ArrowForward } from "@mui/icons-material";
 
 type TextFieldProps = {
   isActive?: boolean;
@@ -22,6 +22,8 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
       return clsx(styles.input, styles.input_date);
     } else if (type === "date-wide") {
       return clsx(styles.input, styles["input_date-wide"]);
+    } else if (type === "subscription") {
+      return clsx(styles.input, styles["input_subscription"]);
     } else {
       return styles.input;
     }
@@ -37,22 +39,32 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
     }
   };
 
+  const hendleEndAdornment = () => {
+    if (type === "date" || type === "date-wide") {
+      return (
+        <InputAdornment position="end" className={styles.icon}>
+          <ExpandMore />
+        </InputAdornment>
+      );
+    } else if (type === "subscription") {
+      return (
+        <InputAdornment position="end" className={styles["icon-wrapper"]}>
+          <ArrowForward className={styles["arrow-forward-icon"]} />
+        </InputAdornment>
+      );
+    }
+  };
+
   return (
     <>
       <StyledEngineProvider injectFirst>
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
           <OutlinedInput
-            readOnly={type === "date" ? true : false}
-            onClick={handleOpen}
+            readOnly={type === "date" || type === "date-wide" ? true : false}
+            onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}
             value={value}
             className={handleClass()}
-            endAdornment={
-              type === "date" || type === "date-wide" ? (
-                <InputAdornment position="end" className={styles.icon}>
-                  <ExpandMore />
-                </InputAdornment>
-              ) : undefined
-            }
+            endAdornment={hendleEndAdornment()}
             placeholder={placeholder}
             sx={{
               "& input": {

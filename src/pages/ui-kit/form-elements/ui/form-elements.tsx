@@ -9,6 +9,7 @@ export const FormElements: FC = () => {
       <div className={styles.wrapper}>
         <TextField placeholder={"Email"} />
         <TextField placeholder={"Email"} value={"Мыло"} isActive={true} />
+        <TextField placeholder={"Email"} value={"Мыло"} type={"subscription"} />
         <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
         <DatePickerDropdown type={"date"} />
