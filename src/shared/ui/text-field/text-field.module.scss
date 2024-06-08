@@ -15,6 +15,11 @@
     cursor: pointer;
   }
 
+  &_date-wide {
+    width: 320px;
+    cursor: pointer;
+  }
+
   &:hover {
     color: var(--color-dark-shade-50);
     border-color: var(--color-dark-shade-50);

@@ -6,12 +6,17 @@
   height: 369px;
   border: 1px solid var(--color-dark-shade-25);
   border-radius: 5px;
+  position: absolute;
+  z-index: 1300;
+  background: white;
 }
+
 .buttons-wrapper {
   display: flex;
   margin: 20px;
   padding: 0;
   justify-content: space-between;
+
   & > button {
     font-weight: 700;
     padding: 0;
@@ -19,6 +24,7 @@
     line-height: 14px;
   }
 }
+
 .mantineDatePickerWrapper {
   width: 320px;
 }
@@ -32,9 +38,11 @@
   font-weight: 700;
   color: var(--color-dark-shade-100);
   font-size: 19px;
+
   & > button:nth-child(1) {
     margin-left: 20px;
   }
+
   & > button:nth-child(3) {
     margin-right: 20px;
   }
@@ -51,6 +59,7 @@
   padding: 0;
   width: 40px;
   height: 40px;
+
   &:hover {
     &::before {
       color: var(--color-white);
@@ -58,6 +67,7 @@
       border-radius: 50%;
     }
   }
+
   &:focus-within {
     color: var(--color-white);
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
@@ -68,6 +78,7 @@ button[data-in-range] {
   background: #e4e8fe;
   border-radius: 0;
 }
+
 .mantineDatePickerDaySelected {
   color: #fff;
   background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
@@ -76,6 +87,7 @@ button[data-in-range] {
 td[data-with-spacing] {
   padding: 0;
   text-align: center;
+
   & button[data-first-in-range] {
     position: relative;
     color: var(--color-white);
@@ -83,16 +95,19 @@ td[data-with-spacing] {
     z-index: 200;
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
+
     &:hover {
       background: #e4e8fe;
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
     }
+
     &:focus {
       background: #e4e8fe;
       border-top-left-radius: 50%;
       border-bottom-left-radius: 50%;
     }
+
     &::before {
       position: absolute;
       z-index: -100;
@@ -105,6 +120,7 @@ td[data-with-spacing] {
       height: inherit;
     }
   }
+
   & button[data-last-in-range] {
     position: relative;
     color: var(--color-white);
@@ -112,16 +128,19 @@ td[data-with-spacing] {
     z-index: 200;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
+
     &:hover {
       background: #e4e8fe;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
     }
+
     &:focus {
       background: #e4e8fe;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
     }
+
     &::before {
       position: absolute;
       z-index: -100;
@@ -140,10 +159,12 @@ div[data-month-level] {
   font-family: var(--font);
   width: 320px;
   border-radius: 2px;
+
   & > td {
     padding: 0;
     text-align: center;
   }
+
   & > button {
     font-size: 12px;
     width: 40px;
@@ -174,36 +195,45 @@ div[data-month-level] {
 div[data-calendar] {
   font-family: var(--font);
 }
+
 div[data-year-level] {
   width: 280px;
   margin: 0 auto;
+
   & > div:first-child {
     & > button:nth-child(1) {
       margin-left: 0;
     }
+
     & > button:nth-child(3) {
       margin-right: 0;
     }
   }
+
   & > table button[data-picker-control] {
     margin: 0 auto;
     color: var(--color-dark-shade-50);
   }
+
   & > table {
     margin: 0 auto;
   }
 }
+
 div[data-decade-level] {
   width: 280px;
   margin: 0 auto;
+
   & > div:first-child {
     & > button:nth-child(1) {
       margin-left: 0;
     }
+
     & > button:nth-child(3) {
       margin-right: 0;
     }
   }
+
   & > table,
   button {
     margin: 0 auto;

@@ -11,7 +11,8 @@ export const FormElements: FC = () => {
         <TextField placeholder={"Email"} value={"Мыло"} isActive={true} />
         <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
-        <DatePickerDropdown />
+        <DatePickerDropdown type={"date"} />
+        <DatePickerDropdown type={"date-wide"} />
       </div>
     </LayoutUiKit>
   );

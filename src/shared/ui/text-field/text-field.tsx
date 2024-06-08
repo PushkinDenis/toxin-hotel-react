@@ -20,6 +20,8 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
       return clsx(styles.input, styles.input_active);
     } else if (type === "date") {
       return clsx(styles.input, styles.input_date);
+    } else if (type === "date-wide") {
+      return clsx(styles.input, styles["input_date-wide"]);
     } else {
       return styles.input;
     }
@@ -45,7 +47,7 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
             value={value}
             className={handleClass()}
             endAdornment={
-              type === "date" ? (
+              type === "date" || type === "date-wide" ? (
                 <InputAdornment position="end" className={styles.icon}>
                   <ExpandMore />
                 </InputAdornment>
