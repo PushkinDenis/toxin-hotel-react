@@ -4,19 +4,6 @@
   width: 92px;
   justify-content: space-between;
 
-
-  & > button {
-    width: 30px;
-    height: 30px;
-    color: var(--color-dark-shade-25);
-    background-color: var(--color-white);
-
-    &:hover {
-      background-color: var(--color-purple);
-      border-color: var(--color-purple);
-    }
-  }
-
   & > input {
     outline: none;
     text-align: center;
@@ -40,4 +27,38 @@
       border: none;
     }
   }
+}
+
+.decrement_button {
+  width: 30px;
+  height: 30px;
+  color: var(--color-dark-shade-50);
+  border-color: var(--color-dark-shade-50);
+  background-color: var(--color-white);
+
+  &_unactive {
+    color: var(--color-dark-shade-25);
+    border-color: var(--color-dark-shade-25);
+  }
+
+  &:hover {
+    background-color: var(--color-purple);
+    border-color: var(--color-purple);
+  }
+}
+
+.increment_button {
+  order: 1;
+  width: 30px;
+  height: 30px;
+  color: var(--color-dark-shade-50);
+  border-color: var(--color-dark-shade-50);
+  background-color: var(--color-white);
+
+
+  &:hover {
+    background-color: var(--color-purple);
+    border-color: var(--color-purple);
+  }
+
 }

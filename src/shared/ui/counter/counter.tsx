@@ -4,35 +4,12 @@ import { styled } from "@mui/system";
 import RemoveIcon from "@mui/icons-material/Remove";
 import AddIcon from "@mui/icons-material/Add";
 import styles from "./counter.module.scss";
+import { clsx } from "clsx";
 
 type CounterProps = {
   onChange: (newValue: number | null) => void;
   initialValue: number | null;
 };
-
-export const NumberInput = React.forwardRef(function CustomNumberInput(props: NumberInputProps, ref: React.ForwardedRef<HTMLDivElement>) {
-  return (
-    <BaseNumberInput
-      className={styles.input}
-      slots={{
-        root: StyledInputRoot,
-        incrementButton: StyledButton,
-        decrementButton: StyledButton,
-      }}
-      slotProps={{
-        incrementButton: {
-          children: <AddIcon fontSize="small" />,
-          className: "increment",
-        },
-        decrementButton: {
-          children: <RemoveIcon fontSize="small" />,
-        },
-      }}
-      {...props}
-      ref={ref}
-    />
-  );
-});
 
 export const Counter: React.FC<CounterProps> = ({ onChange, initialValue }) => {
   const [value, setValue] = React.useState(initialValue);
@@ -43,7 +20,33 @@ export const Counter: React.FC<CounterProps> = ({ onChange, initialValue }) => {
     setValue(value);
     onChange(value);
   };
-  return <NumberInput value={value} aria-label="Quantity Input" min={0} defaultValue={initialValue} max={99} readOnly onChange={(_event, newValue) => handleVal(newValue!)} />;
+  return (
+    <BaseNumberInput
+      value={value}
+      aria-label="Quantity Input"
+      min={0}
+      defaultValue={initialValue}
+      max={99}
+      readOnly
+      onChange={(_event, newValue) => handleVal(newValue!)}
+      className={styles.input}
+      slots={{
+        root: StyledInputRoot,
+        incrementButton: StyledButton,
+        decrementButton: StyledButton,
+      }}
+      slotProps={{
+        incrementButton: {
+          children: <AddIcon fontSize="small" />,
+          className: `${styles.increment_button}`,
+        },
+        decrementButton: {
+          className: `${clsx(value === 0 ? clsx(styles.decrement_button, styles.decrement_button_unactive) : styles.decrement_button)}`,
+          children: <RemoveIcon fontSize="small" />,
+        },
+      }}
+    />
+  );
 };
 
 const blue = {
@@ -112,6 +115,7 @@ const StyledButton = styled("button")(
   &:focus-visible {
     outline: 0;
   }
+
 
   &.increment {
     order: 1;
