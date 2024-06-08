@@ -9,16 +9,23 @@
   border: 1px solid var(--color-dark-shade-25);
   border-radius: 2px;
   padding: 13px 0 13px 15px;
+
   &_date {
     width: 150px;
     cursor: pointer;
   }
+
   &:hover {
     color: var(--color-dark-shade-50);
     border-color: var(--color-dark-shade-50);
   }
 
   &:focus-within {
+    color: var(--color-dark-shade-50);
+    border-color: var(--color-dark-shade-50);
+  }
+
+  &_active {
     color: var(--color-dark-shade-50);
     border-color: var(--color-dark-shade-50);
   }

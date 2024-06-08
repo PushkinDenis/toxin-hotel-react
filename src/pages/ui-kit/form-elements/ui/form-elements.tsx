@@ -8,7 +8,7 @@ export const FormElements: FC = () => {
     <LayoutUiKit>
       <div className={styles.wrapper}>
         <TextField placeholder={"Email"} />
-        <TextField placeholder={"Email"} />
+        <TextField placeholder={"Email"} value={"Мыло"} isActive={true} />
         <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
         <DatePickerDropdown />

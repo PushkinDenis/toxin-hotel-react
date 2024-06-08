@@ -5,14 +5,25 @@ import clsx from "clsx";
 import { ExpandMore } from "@mui/icons-material";
 
 type TextFieldProps = {
+  isActive?: boolean;
   placeholder?: string;
   onClick?: (open: boolean) => void;
   type?: string;
   icon?: boolean;
   value?: string | undefined;
 };
-export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, value }) => {
+export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, value, isActive }) => {
   const [open, setOpen] = useState<boolean>(false);
+
+  const handleClass = () => {
+    if (isActive) {
+      return clsx(styles.input, styles.input_active);
+    } else if (type === "date") {
+      return clsx(styles.input, styles.input_date);
+    } else {
+      return styles.input;
+    }
+  };
 
   const handleOpen = () => {
     if (open) {
@@ -32,7 +43,7 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
             readOnly={type === "date" ? true : false}
             onClick={handleOpen}
             value={value}
-            className={type === "date" ? clsx(styles.input, styles.input_date) : styles.input}
+            className={handleClass()}
             endAdornment={
               type === "date" ? (
                 <InputAdornment position="end" className={styles.icon}>
