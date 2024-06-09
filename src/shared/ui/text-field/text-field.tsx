@@ -58,7 +58,7 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
+        <FormControl className={type === "subscription" ? clsx(styles["form-control"], styles["form-control_subscription"]) : styles["form-control"]} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
           <OutlinedInput
             readOnly={type === "date" || type === "date-wide"}
             onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}

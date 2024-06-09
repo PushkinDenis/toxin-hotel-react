@@ -44,14 +44,16 @@
 
 .form-control {
   font-family: var(--font);
+  width: vars.$selectWidth;
+  &_subscription {
+    width: vars.$selectWidthSmall;
+  }
 }
-
 
 .arrow-forward-icon {
   font-size: 24px;
   color: var(--color-purple);
 }
-
 
 .icon {
   width: 24px;
