@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox } from "@shared";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
@@ -14,6 +14,7 @@ export const FormElements: FC = () => {
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
         <DatePickerDropdown type={"date"} />
         <DatePickerDropdown type={"date-wide"} />
+        <Checkbox />
       </div>
     </LayoutUiKit>
   );
