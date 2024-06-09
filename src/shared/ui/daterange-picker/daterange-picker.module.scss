@@ -1,3 +1,4 @@
+@use "../../../variables.scss" as vars;
 .wrapper {
   display: flex;
   justify-content: space-between;
@@ -130,7 +131,6 @@ td[data-with-spacing] {
       background: #e4e8fe;
       border-top-right-radius: 50%;
       border-bottom-right-radius: 50%;
-
     }
 
     &:focus {
