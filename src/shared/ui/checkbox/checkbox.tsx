@@ -3,6 +3,7 @@ import styles from "./checkbox.module.scss";
 import { Checkbox as CheckboxMui, StyledEngineProvider } from "@mui/material";
 import { CheckboxDefault, CheckboxChecked } from "@shared";
 import clsx from "clsx";
+
 type CheckboxProps = {
   type?: string;
   label?: string;
