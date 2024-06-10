@@ -6,3 +6,5 @@ export * from "./ui/daterange-picker/daterange-picker.tsx";
 export * from "./ui/datepicker-dropdown/datepicker-dropdown.tsx";
 export * from "./helpers/datepicker-helpers.ts";
 export * from "./ui/checkbox/checkbox.tsx";
+export * from "./assets/checkbox-checked.tsx";
+export * from "./assets/checkbox.tsx";
