@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./switch.module.scss";
-import { Switch as SwitchMui, StyledEngineProvider, FormControlLabel, SwitchClasses as classes } from "@mui/material";
+import { Switch as SwitchMui, StyledEngineProvider, FormControlLabel } from "@mui/material";
 
 type SwitchProps = {
   label?: string;
