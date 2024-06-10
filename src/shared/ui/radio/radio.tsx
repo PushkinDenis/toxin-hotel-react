@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import styles from "./radio.module.scss";
-import { Radio as RadioMui, StyledEngineProvider, FormControlLabel } from "@mui/material";
+import { Checkbox as RadioMui, StyledEngineProvider, FormControlLabel } from "@mui/material";
 import { RadioChecked, RadioIcon } from "@shared";
 import clsx from "clsx";
 
