@@ -1,6 +1,46 @@
 .switch {
   color: rebeccapurple;
+  padding: 0;
+  height: 20px;
+  width: fit-content;
+  margin-right: 10px;
+
+  & :global .MuiSwitch-track {
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--color-dark-shade-25);
+    background-color: var(--color-white);
+  }
+  & :global .MuiSwitch-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--color-dark-shade-25);
+    box-shadow: none;
+  }
+
+  & :global .MuiSwitch-switchBase {
+    padding: 4px;
+    &.Mui-checked {
+      & > .MuiSwitch-thumb {
+        background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      }
+      & + .MuiSwitch-track {
+        background-color: var(--color-white);
+        border: 1px solid #bc9cff;
+      }
+    }
+  }
 }
 .label {
-  color: red;
+  width: fit-content;
+  height: 20px;
+  margin: 0;
+  & :global .MuiFormControlLabel-label {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-dark-shade-75);
+  }
 }
