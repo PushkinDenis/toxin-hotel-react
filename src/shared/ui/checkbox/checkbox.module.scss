@@ -3,7 +3,13 @@
   margin: 0;
   width: 20px;
   height: 20px;
-  & .MuiSvgIcon-root {
-    font-size: 20px;
+}
+
+.form {
+  font-size: 12px;
+  & > span:last-child {
+    font-size: 12px;
+    font: var(--font);
+    margin-left: 20px;
   }
 }
