@@ -11,3 +11,6 @@ export * from "./assets/checkbox.tsx";
 export * from "./ui/radio/radio.tsx";
 export * from "./assets/radio-checked.tsx";
 export * from "./assets/radio.tsx";
+export * from "./ui/switch/switch.tsx";
+export * from "./assets/switch-checked.tsx";
+export * from "./assets/switch.tsx";
