@@ -3,13 +3,39 @@
   margin: 0;
   width: 20px;
   height: 20px;
+  margin-right: 10px;
 }
 
 .form {
-  font-size: 12px;
-  & > span:last-child {
+  display: flex;
+  width: 222px;
+  font-size: 14px;
+  align-items: center;
+  &_rich {
+    width: 266px;
+    height: 52px;
+    align-items: flex-start;
+  }
+}
+.label {
+  font-family: var(--font);
+  color: var(--color-dark-shade-50);
+  line-height: 18px;
+  &_wrapper {
+    display: flex;
+    width: 233px;
+    flex-direction: column;
+  }
+  &_description {
+    margin-top: 5px;
+    color: var(--color-dark-shade-50);
     font-size: 12px;
-    font: var(--font);
-    margin-left: 20px;
+    line-height: 14px;
+    font-family: var(--font);
+    align-self: start;
+  }
+  &_rich {
+    font-weight: bold;
+    color: var(--color-dark-shade-75);
   }
 }

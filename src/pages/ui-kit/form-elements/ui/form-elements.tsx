@@ -14,7 +14,8 @@ export const FormElements: FC = () => {
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
         <DatePickerDropdown type={"date"} />
         <DatePickerDropdown type={"date-wide"} />
-        <Checkbox />
+        <Checkbox label="Можно курить" />
+        <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
       </div>
     </LayoutUiKit>
   );
