@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./checkbox.module.scss";
-import { Checkbox as CheckboxMui, StyledEngineProvider, FormControlLabel, FormLabel } from "@mui/material";
+import { Checkbox as CheckboxMui, StyledEngineProvider } from "@mui/material";
 import { CheckboxDefault, CheckboxChecked } from "@shared";
 import clsx from "clsx";
 type CheckboxProps = {
