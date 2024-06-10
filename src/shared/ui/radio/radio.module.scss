@@ -1,0 +1,31 @@
+.form {
+  max-width: fit-content;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  justify-items: flex-start;
+  & > span:first-child {
+    margin-right: 10px;
+  }
+  & > span {
+    padding: 0;
+  }
+  &_active {
+    & > span:last-child {
+      color: var(--color-dark-shade-75) !important;
+    }
+  }
+  & > span:last-child {
+    font-family: var(--font);
+    font-size: 14px;
+    line-height: 24px;
+    color: var(--color-dark-shade-25);
+  }
+}
+
+.radio {
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
