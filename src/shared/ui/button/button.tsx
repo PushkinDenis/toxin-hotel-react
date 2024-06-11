@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Button as ButtonMui, StyledEngineProvider, SvgIcon } from "@mui/material";
+import { Button as ButtonMui, StyledEngineProvider } from "@mui/material";
 import { Like, LikeActive } from "@shared";
 import styles from "./button.module.scss";
 import clsx from "clsx";
