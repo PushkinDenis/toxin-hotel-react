@@ -14,6 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": "/src",
+      "@public": "/public",
       "@icons": "./public/icons",
       "@app": "/src/app",
       "@entities": "/src/entities/index.ts",

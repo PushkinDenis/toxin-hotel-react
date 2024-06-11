@@ -28,6 +28,17 @@
   &:hover {
     border: 1px solid var(--color-purple);
     color: var(--color-purple);
+    opacity: 0.8;
+    &::before {
+      position: absolute;
+      content: url("@public/icons/like.svg");
+      width: 10px;
+      height: 10px;
+      opacity: 1;
+      z-index: 2000;
+      transform: translate(46%, -4%);
+      opacity: 0.8;
+    }
   }
   &_active {
     border: 1px solid var(--color-purple);
@@ -39,4 +50,5 @@
   justify-self: center;
   width: 10px;
   height: 10px;
+  position: relative;
 }
