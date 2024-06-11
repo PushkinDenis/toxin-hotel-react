@@ -27,22 +27,6 @@
 
   &:hover {
     border: 1px solid var(--color-purple);
-    color: var(--color-purple);
-    opacity: 0.8;
-    &::before {
-      position: absolute;
-      content: url("@public/icons/like.svg");
-      width: 10px;
-      height: 10px;
-      opacity: 1;
-      z-index: 2000;
-      display: block;
-      top: -6%;
-      left: -50%;
-      right: 0;
-      bottom: 0;
-      margin: auto;
-    }
   }
   &_active {
     border: 1px solid var(--color-purple);
