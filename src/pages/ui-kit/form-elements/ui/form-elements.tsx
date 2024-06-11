@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider } from "@shared";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
@@ -21,6 +21,7 @@ export const FormElements: FC = () => {
         <Rating />
         <Button variant="like" text="1" />
         <Button variant="like" text="12" />
+        <Slider label={"RANGE SLIDER"} />
       </div>
     </LayoutUiKit>
   );

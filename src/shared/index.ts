@@ -19,3 +19,4 @@ export * from "./assets/rate-star.tsx";
 export * from "./assets/rate-star-checked.tsx";
 export * from "./assets/like-active.tsx";
 export * from "./assets/like.tsx";
+export * from "./ui/slider/slider.tsx";
