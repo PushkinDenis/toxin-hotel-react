@@ -3,6 +3,7 @@ import { Button as ButtonMui, StyledEngineProvider } from "@mui/material";
 import { Like, LikeActive } from "@shared";
 import styles from "./button.module.scss";
 import clsx from "clsx";
+import { ArrowForward } from "@mui/icons-material";
 
 type ButtonProps = {
   onClick?: () => void;
@@ -29,6 +30,11 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
       )}
       {variant === "contained" && (
         <ButtonMui variant="contained" className={styles.contained}>
+          {text}
+        </ButtonMui>
+      )}
+      {variant === "wide" && (
+        <ButtonMui variant="contained" className={styles.wide} endIcon={<ArrowForward className={styles["icon-arrow"]} />}>
           {text}
         </ButtonMui>
       )}

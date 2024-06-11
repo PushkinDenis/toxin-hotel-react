@@ -24,6 +24,7 @@ export const FormElements: FC = () => {
         <Button variant="outlined" text="12" />
         <Button variant="contained" text="12" />
         <Button variant={"text"} text={"dvs"} />
+        <Button variant={"wide"} text={"перейти к оплате"} />
         <Slider label={"RANGE SLIDER"} />
       </div>
     </LayoutUiKit>
