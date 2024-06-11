@@ -21,6 +21,9 @@ export const FormElements: FC = () => {
         <Rating />
         <Button variant="like" text="1" />
         <Button variant="like" text="12" />
+        <Button variant="outlined" text="12" />
+        <Button variant="contained" text="12" />
+        <Button variant={"text"} text={"dvs"} />
         <Slider label={"RANGE SLIDER"} />
       </div>
     </LayoutUiKit>

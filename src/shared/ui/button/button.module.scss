@@ -4,9 +4,51 @@
   font-size: var(--font-h3);
   line-height: var(--line-height-h3);
   font-weight: 700;
+  width: fit-content;
+  min-width: fit-content;
+  padding: 0;
+  display: block;
+
+  &:hover {
+    color: var(--color-dark-shade-50);
+  }
 }
+
 .outlined {
-  color: rebeccapurple;
+  border-radius: 22px;
+  background-color: var(--color-white);
+  border: 2px solid var(--color-purple);
+  color: var(--color-purple);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  width: 100px;
+  height: 44px;
+
+  &:hover {
+    border: 2px solid #D1CFFE;
+    background-color: var(--color-white);
+  }
+}
+
+.contained {
+  border-radius: 22px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  color: var(--color-white);
+  font-family: var(--font);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 14px;
+  width: 100px;
+  height: 44px;
+  box-shadow: none;
+
+  &:hover {
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    opacity: 0.5;
+    box-shadow: none;
+  }
 }
 
 .like {
@@ -28,11 +70,13 @@
   &:hover {
     border: 1px solid var(--color-purple);
   }
+
   &_active {
     border: 1px solid var(--color-purple);
     color: var(--color-purple);
   }
 }
+
 .icon {
   align-self: center;
   justify-self: center;
