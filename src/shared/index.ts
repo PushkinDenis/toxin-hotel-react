@@ -17,3 +17,5 @@ export * from "./assets/switch.tsx";
 export * from "./ui/rating/rating.tsx";
 export * from "./assets/rate-star.tsx";
 export * from "./assets/rate-star-checked.tsx";
+export * from "./assets/like-active.tsx";
+export * from "./assets/like.tsx";

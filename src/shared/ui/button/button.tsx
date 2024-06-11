@@ -1,14 +1,20 @@
 import * as React from "react";
-import { Button as ButtonMui, StyledEngineProvider } from "@mui/material";
+import { Button as ButtonMui, StyledEngineProvider, SvgIcon } from "@mui/material";
+import { Like, LikeActive } from "@shared";
 import styles from "./button.module.scss";
+import clsx from "clsx";
 
 type ButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   variant: string;
   text: string;
 };
 
 export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
+  const [click, setClick] = React.useState<boolean>(false);
+  const handleClick = () => {
+    click ? setClick(false) : setClick(true);
+  };
   return (
     <StyledEngineProvider injectFirst>
       {variant === "text" && (
@@ -23,6 +29,12 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
       )}
       {variant === "contained" && (
         <ButtonMui variant="contained" className={styles.contained}>
+          {text}
+        </ButtonMui>
+      )}
+      {variant === "like" && (
+        <ButtonMui variant="outlined" className={click ? clsx(styles.like, styles.like_active) : styles.like} onClick={handleClick}>
+          {click ? <LikeActive className={styles.icon} /> : <Like className={styles.icon} />}
           {text}
         </ButtonMui>
       )}
