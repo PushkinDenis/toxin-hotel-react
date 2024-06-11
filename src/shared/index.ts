@@ -14,3 +14,6 @@ export * from "./assets/radio.tsx";
 export * from "./ui/switch/switch.tsx";
 export * from "./assets/switch-checked.tsx";
 export * from "./assets/switch.tsx";
+export * from "./ui/rating/rating.tsx";
+export * from "./assets/rate-star.tsx";
+export * from "./assets/rate-star-checked.tsx";
