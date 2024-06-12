@@ -23,9 +23,11 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
         </ButtonMui>
       )}
       {variant === "outlined" && (
-        <ButtonMui variant="outlined" className={styles.outlined}>
-          {text}
-        </ButtonMui>
+        <div className={styles.outline_wrapper}>
+          <ButtonMui variant="outlined" className={styles.outlined}>
+            {text}
+          </ButtonMui>
+        </div>
       )}
       {variant === "contained" && (
         <ButtonMui variant="contained" className={styles.contained}>

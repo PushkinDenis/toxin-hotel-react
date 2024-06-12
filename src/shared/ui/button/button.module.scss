@@ -49,17 +49,17 @@
 .outlined {
   border-radius: 22px;
   background-color: var(--color-white);
-  border: 2px solid var(--color-purple);
   color: var(--color-purple);
   font-family: var(--font);
   font-size: 12px;
   font-weight: 700;
   line-height: 14px;
-  width: 100px;
-  height: 44px;
+  width: 96px;
+  height: 40px;
+  border: none;
 
   &:hover {
-    border: 2px solid #d1cffe;
+    border: none;
     background-color: var(--color-white);
   }
 }
@@ -115,4 +115,18 @@
   width: 10px;
   height: 10px;
   position: relative;
+}
+
+.outline_wrapper {
+  width: 100px;
+  height: 44px;
+  background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+  padding: 2px;
+  border-radius: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover {
+    background: #d1cffe;
+  }
 }
