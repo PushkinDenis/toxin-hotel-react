@@ -3,6 +3,7 @@ import { Label, Checkbox } from "@shared";
 import { Icon } from "@mui/material";
 import { ExpandMore, ExpandLess } from "@mui/icons-material";
 import styles from "./checkbox-list.module.scss";
+import clsx from "clsx";
 
 type CheckboxListProps = {
   labelText: string;
@@ -28,15 +29,14 @@ export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText }) => {
           </Icon>
         )}
       </div>
-      {expand && (
-        <ul className={styles.list}>
-          {text.map((value) => (
-            <li className={styles.li}>
-              <Checkbox label={value} />
-            </li>
-          ))}
-        </ul>
-      )}
+
+      <ul className={expand ? styles.list : clsx(styles.list, styles.list_disabled)}>
+        {text.map((value) => (
+          <li className={styles.li}>
+            <Checkbox label={value} />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

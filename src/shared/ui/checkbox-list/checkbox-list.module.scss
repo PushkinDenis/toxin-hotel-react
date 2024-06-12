@@ -1,6 +1,5 @@
 @use "../../../variables.scss" as var;
 
-
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -40,5 +39,8 @@
 }
 
 .icon {
-  @include var.icon
+  @include var.icon;
+}
+.list_disabled {
+  display: none;
 }
