@@ -1,0 +1,44 @@
+@use "../../../variables.scss" as var;
+
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  width: var.$selectWidthSmall;
+}
+
+.label_wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 14px;
+  width: var.$selectWidthSmall;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1400;
+  background-color: var(--color-white);
+}
+
+.li {
+  padding-bottom: 10px;
+
+  &:first-child {
+    padding-top: 20px;
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+.icon {
+  @include var.icon
+}

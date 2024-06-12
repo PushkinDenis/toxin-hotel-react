@@ -1,0 +1,42 @@
+import { FC, useState } from "react";
+import { Label, Checkbox } from "@shared";
+import { Icon } from "@mui/material";
+import { ExpandMore, ExpandLess } from "@mui/icons-material";
+import styles from "./checkbox-list.module.scss";
+
+type CheckboxListProps = {
+  labelText: string;
+  text: string[];
+};
+
+export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText }) => {
+  const [expand, setExpand] = useState<boolean>(false);
+  const handleClick = () => {
+    expand ? setExpand(false) : setExpand(true);
+  };
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.label_wrapper} onClick={handleClick}>
+        <Label text={labelText} />
+        {expand ? (
+          <Icon className={styles.icon}>
+            <ExpandLess></ExpandLess>
+          </Icon>
+        ) : (
+          <Icon className={styles.icon}>
+            <ExpandMore></ExpandMore>
+          </Icon>
+        )}
+      </div>
+      {expand && (
+        <ul className={styles.list}>
+          {text.map((value) => (
+            <li className={styles.li}>
+              <Checkbox label={value} />
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+};

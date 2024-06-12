@@ -22,3 +22,4 @@ export * from "./assets/like.tsx";
 export * from "./ui/slider/slider.tsx";
 export * from "./ui/pagination/pagination.tsx";
 export * from "./ui/label/label.tsx";
+export * from "./ui/checkbox-list/checkbox-list.tsx";
