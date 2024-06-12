@@ -1,0 +1,14 @@
+.pagination {
+  width: 240px;
+
+  & :global .MuiPaginationItem-root {
+    font-family: var(--font);
+    font-size: 12px;
+    line-height: 14px;
+    color: var(--color-dark-shade-50);
+    width: 40px;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+  }
+}
