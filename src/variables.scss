@@ -28,3 +28,13 @@ $selectWidthSmall: 266px;
   font-family: Montserrat;
   src: url("/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
+
+@mixin label {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h2);
+  font-family: var(--font);
+  font-weight: 700;
+  color: var(--color-dark-shade-100);
+  text-transform: uppercase;
+  width: fit-content;
+}

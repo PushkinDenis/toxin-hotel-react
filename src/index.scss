@@ -1,5 +1,6 @@
 @use "../src/variables.scss";
 @use "@mantine/dates/styles.css";
+
 :root {
   font-family: Montserrat;
   background-color: var(--color-white);
@@ -7,6 +8,7 @@
   line-height: var(--line-height-body);
   color: var(--color-dark-shade-75);
 }
+
 
 * {
   margin: 0;
