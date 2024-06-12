@@ -5,8 +5,7 @@ import styles from "./button.module.scss";
 import clsx from "clsx";
 import { ArrowForward } from "@mui/icons-material";
 
-type ButtonProps = {
-  onClick?: () => void;
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: string;
   text: string;
 };
