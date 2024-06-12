@@ -26,7 +26,7 @@ export const FormElements: FC = () => {
         <Button variant={"text"} text={"dvs"} />
         <Button variant={"wide"} text={"перейти к оплате"} />
         <Slider label={"RANGE SLIDER"} />
-        <Pagination />
+        <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
       </div>
     </LayoutUiKit>
   );
