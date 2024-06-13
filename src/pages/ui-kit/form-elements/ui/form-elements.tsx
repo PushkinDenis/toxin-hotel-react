@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
 import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList, BulletList, Feature } from "@shared";
+import { Review } from "@widgets";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
@@ -32,6 +33,7 @@ export const FormElements: FC = () => {
         <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />
         <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
         <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
+        <Review img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
       </div>
     </LayoutUiKit>
   );

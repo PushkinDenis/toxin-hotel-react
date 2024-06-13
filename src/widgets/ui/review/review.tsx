@@ -1,13 +1,13 @@
 import { FC } from "react";
-import styles from "./feature.module.scss";
+import styles from "./review.module.scss";
 
-type FeatureProps = {
+type ReviewProps = {
   text?: string;
   description?: string;
   img?: string;
 };
 
-export const Feature: FC<FeatureProps> = ({ text, description, img }) => {
+export const Review: FC<ReviewProps> = ({ text, description, img }) => {
   return (
     <div className={styles.wrapper}>
       <img src={img} className={styles.img}></img>
