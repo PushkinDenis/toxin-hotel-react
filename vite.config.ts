@@ -20,7 +20,7 @@ export default defineConfig({
       "@app": "/src/app",
       "@entities": "/src/entities/index.ts",
       "@features": "/src/features/index.ts",
-      "@widgets": "/src/features/index.ts",
+      "@widgets": "/src/widgets/index.ts",
       "@pages": "/src/pages/index.ts",
       "@shared": "/src/shared/index.ts",
     },
