@@ -48,3 +48,10 @@ $selectWidthSmall: 266px;
   justify-content: center;
   align-items: center;
 }
+
+@mixin text {
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 24px;
+  color: var(--color-dark-shade-75);
+}

@@ -1,0 +1,36 @@
+@use "../../../variables.scss" as var;
+
+.ul {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  align-items: start;
+  height: 116px;
+}
+
+.li {
+  position: relative;
+  height: fit-content;
+  @include var.text;
+  margin: 0;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  &::before {
+    content: "";
+    position: absolute;
+    background-color: var(--color-dark-shade-25);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    align-self: start;
+    font-size: 14px;
+    top: 0.5em;
+    left: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

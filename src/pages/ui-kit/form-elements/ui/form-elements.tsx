@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList, BulletList } from "@shared";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
@@ -29,6 +29,7 @@ export const FormElements: FC = () => {
         <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
         <Label text={"Label"} />
+        <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />
       </div>
     </LayoutUiKit>
   );
