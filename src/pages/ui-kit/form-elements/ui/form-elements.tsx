@@ -21,7 +21,7 @@ export const FormElements: FC = () => {
           <ElementLayout label={"masked text field"}>
             <TextField placeholder={"ДД.ММ.ГГГГ"} />
           </ElementLayout>
-          <DatePickerDropdown type={"date"} />
+          <DatePickerDropdown type={"date"} label_first="date dropdown" label_second="date dropdown" />
           <ElementLayout label={"filter date dropdown"}>
             <DatePickerDropdown type={"date-wide"} />
           </ElementLayout>

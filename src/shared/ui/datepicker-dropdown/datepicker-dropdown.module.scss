@@ -1,13 +1,36 @@
 @use "../../../variables.scss" as vars;
-.inputs-wrapper {
+.dropdown-wrapper {
   display: flex;
   width: 320px;
+  flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  margin-bottom: 5px;
   padding: 0;
   position: relative;
+
+  &_wide {
+    width: 266px;
+  }
 }
-.wrapper {
-  width: vars.$selectWidth;
+// .filter-date {
+//   width: var.$selectWidthSmall;
+// }
+
+.label_wrapper {
+  display: grid;
+  align-content: center;
+  grid-template-columns: 1fr 1fr;
+  height: 15px;
+  margin: 0;
+  margin-bottom: 6px;
+  padding: 0;
+  & > h3:last-child {
+    margin-left: 10px;
+  }
+}
+.inputs_wrapper {
+  width: 320px;
+  display: flex;
+  justify-content: space-between;
+  height: 44px;
 }
