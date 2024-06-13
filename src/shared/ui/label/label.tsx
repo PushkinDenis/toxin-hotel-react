@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "./label.module.scss";
 
 type LabelProps = {
-  text: string;
+  text?: string;
 };
 
 export const Label: FC<LabelProps> = ({ text }) => {

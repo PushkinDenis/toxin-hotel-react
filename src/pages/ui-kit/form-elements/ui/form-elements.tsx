@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList, BulletList, Feature } from "@shared";
+import { LayoutUiKit, ElementLayout } from "@pages";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, CheckboxList, BulletList, Feature } from "@shared";
 import { Review } from "@widgets";
 import styles from "./form-elements.module.scss";
 
@@ -8,13 +8,32 @@ export const FormElements: FC = () => {
   return (
     <LayoutUiKit>
       <div className={styles.wrapper}>
-        <TextField placeholder={"Email"} />
-        <TextField placeholder={"Email"} value={"Email"} isActive={true} />
+        <div className={styles.first_col}>
+          <ElementLayout label={"Text Field"} state={"Default"}>
+            <TextField placeholder={"Email"} />
+          </ElementLayout>
+          <ElementLayout label={"Text Field"} state={"Hover / Focus"}>
+            <TextField placeholder={"Email"} value={"Email"} isActive={true} />
+          </ElementLayout>
+          <ElementLayout label={"Dropdown"}>
+            <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
+          </ElementLayout>
+          <ElementLayout label={"masked text field"}>
+            <TextField placeholder={"ДД.ММ.ГГГГ"} />
+          </ElementLayout>
+          <DatePickerDropdown type={"date"} />
+          <ElementLayout label={"filter date dropdown"}>
+            <DatePickerDropdown type={"date-wide"} />
+          </ElementLayout>
+          <ElementLayout label={"subscription text field"}>
+            <TextField type={"subscription"} placeholder={"Email"} />
+          </ElementLayout>
+        </div>
+
         <TextField placeholder={"Email"} type={"subscription"} />
-        <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
+
         <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
-        <DatePickerDropdown type={"date"} />
-        <DatePickerDropdown type={"date-wide"} />
+
         <Checkbox label="Можно курить" />
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
         <Radio label="Мужчины" />
@@ -29,7 +48,7 @@ export const FormElements: FC = () => {
         <Slider label={"RANGE SLIDER"} />
         <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
-        <Label text={"Label"} />
+
         <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />
         <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
         <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />

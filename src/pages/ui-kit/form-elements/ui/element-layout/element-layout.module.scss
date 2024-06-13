@@ -1,0 +1,12 @@
+.element_wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.label_wrapper {
+  display: flex;
+  justify-content: space-between;
+  height: 15px;
+  align-items: center;
+  padding-bottom: 5px;
+}

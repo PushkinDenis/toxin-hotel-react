@@ -55,3 +55,12 @@ $selectWidthSmall: 266px;
   line-height: 24px;
   color: var(--color-dark-shade-75);
 }
+
+@mixin descriptionText {
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--color-dark-shade-50);
+  text-transform: uppercase;
+  font-weight: normal;
+}

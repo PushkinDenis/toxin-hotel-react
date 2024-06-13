@@ -25,3 +25,4 @@ export * from "./ui/label/label.tsx";
 export * from "./ui/checkbox-list/checkbox-list.tsx";
 export * from "./ui/bullet-list/bullet-list.tsx";
 export * from "./ui/feature/feature.tsx";
+export * from "./ui/state-description/state-description.tsx";
