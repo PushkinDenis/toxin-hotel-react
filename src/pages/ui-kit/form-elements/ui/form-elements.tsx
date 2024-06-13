@@ -33,7 +33,14 @@ export const FormElements: FC = () => {
         <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />
         <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
         <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
-        <Review img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
+        <Review
+          review={"Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."}
+          img={"./pictures/user_1.png"}
+          textLikeButton={"12"}
+          userName={"Мурад Сарафанов"}
+          userLastLogin={"5 дней назад"}
+        />
+        <Review review={"Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"} img={"./pictures/user_2.png"} textLikeButton={"2"} userName={"Патрисия Стёклышкова "} userLastLogin={"Неделю назад"} />
       </div>
     </LayoutUiKit>
   );

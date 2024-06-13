@@ -1,29 +1,43 @@
 @use "../../../variables.scss" as var;
 
 .wrapper {
-  display: flex;
-  width: 280px;
-  border-bottom: 1px solid var(--color-dark-shade-25);
+  display: grid;
+  width: 711px;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: 48px 72px;
+  align-items: center;
+  text-align: start;
+  height: 133px;
+  gap: 10px;
+  & > button {
+    justify-self: center;
+    align-self: start;
+  }
 }
 
-.text_wrapper {
+.user {
   display: flex;
+  width: 550px;
   flex-direction: column;
-  width: fit-content;
-}
-
-.text {
-  @include var.text;
-  font-weight: 700;
-}
-
-.description {
-  @include var.text;
-}
-
-.img {
-  padding: 4px;
-  width: 48px;
-  height: 48px;
-  margin-right: 10px;
+  &_name {
+    @include var.text;
+    font-weight: 700;
+    align-self: start;
+  }
+  &_last_login {
+    @include var.text;
+    align-self: start;
+  }
+  &_review {
+    @include var.text;
+    width: 560px;
+    align-self: start;
+  }
+  &_img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+    justify-self: center;
+  }
 }
