@@ -42,7 +42,7 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
       {variant === "like" && (
         <ButtonMui variant="outlined" className={click ? clsx(styles.like, styles.like_active) : styles.like} onClick={handleClick}>
           {click ? <LikeActive className={styles.icon} /> : <Like className={styles.icon} />}
-          {text}
+          {click ? `${+text + 1}` : text}
         </ButtonMui>
       )}
     </StyledEngineProvider>
