@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList, BulletList } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, Label, CheckboxList, BulletList, Feature } from "@shared";
 import styles from "./form-elements.module.scss";
 
 export const FormElements: FC = () => {
@@ -30,6 +30,8 @@ export const FormElements: FC = () => {
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
         <Label text={"Label"} />
         <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />
+        <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
+        <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
       </div>
     </LayoutUiKit>
   );
