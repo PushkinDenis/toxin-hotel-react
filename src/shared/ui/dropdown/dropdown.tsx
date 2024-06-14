@@ -14,17 +14,22 @@ import { clsx } from "clsx";
 type DropdownProps = {
   items: string[];
   isActive?: boolean;
+  values?: number[];
 };
 
-export const Dropdown: FC<DropdownProps> = ({ items, isActive }) => {
+export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
   const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
   const [open, setOpen] = React.useState(false);
 
   React.useEffect(() => {
-    setTotalVal([0, 2, 2]);
-    setOpen(true);
-  }, [isActive]);
+    if (isActive) {
+      setOpen(true);
+    }
+    if (values !== undefined) {
+      setTotalVal(values);
+    }
+  }, []);
 
   const handleValue = () => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
@@ -94,6 +99,9 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive }) => {
       ) : (
         <FormControl className={clsx(styles["form-control"], styles["form-control_small"])} sx={{ "& fieldset": { border: "none" } }}>
           <Select
+            open={open}
+            onOpen={handleOpen}
+            onClose={handleClose}
             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
             className={clsx(styles["select-small"], styles.select)}
             labelId="demo-multiple-checkbox-label"
