@@ -22,7 +22,7 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_fi
 
   return (
     <>
-      <div className={type === "date-wide" ? clsx(styles["dropdown-wrapper"], styles["dropdown-wrapper_wide"]) : styles["dropdown-wrapper"]}>
+      <div className={type === "date-wide" ? clsx(styles["dropdown-wrapper_wide"]) : styles["dropdown-wrapper"]}>
         {type === "date" && (
           <>
             <div className={styles.label_wrapper}>
