@@ -42,11 +42,9 @@ $selectWidthSmall: 266px;
 @mixin icon {
   width: 24px;
   height: 24px;
+  font-size: 24px;
   text-align: center;
   color: var(--color-dark-shade-50);
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 @mixin text {

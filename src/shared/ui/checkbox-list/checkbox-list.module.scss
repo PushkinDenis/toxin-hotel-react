@@ -10,9 +10,10 @@
 
 .label_wrapper {
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding-right: 14px;
   width: var.$selectWidthSmall;
+  padding-right: 11px;
 }
 
 .list {

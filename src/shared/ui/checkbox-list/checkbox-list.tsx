@@ -19,15 +19,7 @@ export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText }) => {
     <div className={styles.wrapper}>
       <div className={styles.label_wrapper} onClick={handleClick}>
         <Label text={labelText} />
-        {expand ? (
-          <Icon className={styles.icon}>
-            <ExpandLess></ExpandLess>
-          </Icon>
-        ) : (
-          <Icon className={styles.icon}>
-            <ExpandMore></ExpandMore>
-          </Icon>
-        )}
+        {expand ? <ExpandLess sx={{ fontSize: "24px" }} className={styles.icon}></ExpandLess> : <ExpandMore sx={{ fontSize: "24px" }} className={styles.icon}></ExpandMore>}
       </div>
 
       <ul className={expand ? styles.list : clsx(styles.list, styles.list_disabled)}>
