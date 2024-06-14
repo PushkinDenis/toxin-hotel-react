@@ -13,12 +13,18 @@ import { clsx } from "clsx";
 
 type DropdownProps = {
   items: string[];
+  isActive?: boolean;
 };
 
-export const Dropdown: FC<DropdownProps> = ({ items }) => {
+export const Dropdown: FC<DropdownProps> = ({ items, isActive }) => {
   const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
   const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    setTotalVal([0, 2, 2]);
+    setOpen(true);
+  }, [isActive]);
 
   const handleValue = () => {
     if (!totalVal.reduce((accum, item) => (accum! += item!), 0) && items[0] !== "СПАЛЬНИ" && items[1] !== "КРОВАТИ" && items[2] !== "ВАННЫЕ КОМНАТЫ") {
