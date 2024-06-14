@@ -8,11 +8,12 @@ type ElementLayoutProps = {
   label?: string;
   state?: string;
   className?: string;
+  type?: string;
 };
 
-export const ElementLayout: FC<ElementLayoutProps> = ({ children, label, state, className }) => {
+export const ElementLayout: FC<ElementLayoutProps> = ({ children, label, state, type }) => {
   return (
-    <div className={clsx(styles.element_wrapper, { className })}>
+    <div className={type === "small" ? clsx(styles.element_wrapper, styles.element_wrapper_small) : styles.element_wrapper}>
       <div className={styles.label_wrapper}>
         <Label text={label} />
         <StateDescription text={state} />

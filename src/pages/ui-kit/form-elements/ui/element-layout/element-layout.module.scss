@@ -2,6 +2,9 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: 67px;
+  &_small {
+    width: 266px;
+  }
 }
 
 .label_wrapper {
