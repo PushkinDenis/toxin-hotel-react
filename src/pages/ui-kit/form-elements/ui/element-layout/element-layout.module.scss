@@ -1,12 +1,11 @@
 .element_wrapper {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  height: 67px;
 }
 
 .label_wrapper {
   display: flex;
   justify-content: space-between;
-  height: 15px;
-  align-items: center;
-  padding-bottom: 5px;
+  align-items: start;
 }

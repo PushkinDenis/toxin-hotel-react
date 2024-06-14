@@ -31,7 +31,6 @@ $selectWidthSmall: 266px;
 
 @mixin label {
   font-size: var(--font-size-h3);
-  line-height: var(--line-height-h2);
   font-family: var(--font);
   font-weight: 700;
   color: var(--color-dark-shade-100);

@@ -22,28 +22,26 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_fi
 
   return (
     <>
-      <div className={styles.wrapper}>
-        <div className={type === "date-wide" ? clsx(styles["dropdown-wrapper"], styles["dropdown-wrapper_wide"]) : styles["dropdown-wrapper"]}>
-          {type === "date" && (
-            <>
-              <div className={styles.label_wrapper}>
-                <Label text={label_first} />
-                <Label text={label_second} />
-              </div>
-              <div className={styles.inputs_wrapper}>
-                <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? parseDate(`${value[0]}`) : ""} />
-                <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[1] ? parseDate(`${value[1]}`) : ""} />
-              </div>
-            </>
-          )}
-          {type === "date-wide" && (
-            <>
-              <TextField onClick={handleOpen} type={"date-wide"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? `${parseDateRu(`${value[0]}`)} - ${parseDateRu(`${value[1]}`)}` : ""} />
-            </>
-          )}
-        </div>
-        {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
+      <div className={type === "date-wide" ? clsx(styles["dropdown-wrapper"], styles["dropdown-wrapper_wide"]) : styles["dropdown-wrapper"]}>
+        {type === "date" && (
+          <>
+            <div className={styles.label_wrapper}>
+              <Label text={label_first} />
+              <Label text={label_second} />
+            </div>
+            <div className={styles.inputs_wrapper}>
+              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? parseDate(`${value[0]}`) : ""} />
+              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[1] ? parseDate(`${value[1]}`) : ""} />
+            </div>
+          </>
+        )}
+        {type === "date-wide" && (
+          <>
+            <TextField onClick={handleOpen} type={"date-wide"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? `${parseDateRu(`${value[0]}`)} - ${parseDateRu(`${value[1]}`)}` : ""} />
+          </>
+        )}
       </div>
+      {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
     </>
   );
 };
