@@ -40,8 +40,8 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_fi
             <TextField onClick={handleOpen} type={"date-wide"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? `${parseDateRu(`${value[0]}`)} - ${parseDateRu(`${value[1]}`)}` : ""} />
           </>
         )}
+        {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
       </div>
-      {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
     </>
   );
 };
