@@ -35,7 +35,7 @@ export const FormElements: FC = () => {
             <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} isActive={true} values={[3, 2, 6]} />
           </ElementLayout>
           <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
-          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
+          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} />
           <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
           <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
         </div>
