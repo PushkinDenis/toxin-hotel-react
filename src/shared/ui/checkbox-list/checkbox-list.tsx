@@ -12,7 +12,8 @@ type CheckboxListProps = {
 
 export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText, isActive }) => {
   const [expand, setExpand] = useState<boolean>(false);
-  const [active, setActive] = useState<boolean>(false);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [_active, setActive] = useState<boolean>(false);
 
   useEffect(() => {
     if (isActive) {
