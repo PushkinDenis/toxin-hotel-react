@@ -8,16 +8,16 @@ type CheckboxProps = {
   type?: string;
   label?: string;
   description?: string;
-  isActive?: boolean;
+  isChecked?: boolean;
 };
 
-export const Checkbox: FC<CheckboxProps> = ({ label, description, type, isActive }) => {
+export const Checkbox: FC<CheckboxProps> = ({ label, description, type, isChecked }) => {
   const [active, setActive] = useState<boolean>(false);
   const handleActive = () => {
     active ? setActive(false) : setActive(true);
   };
   useEffect(() => {
-    if (isActive) {
+    if (isChecked) {
       setActive(true);
     }
   }, []);

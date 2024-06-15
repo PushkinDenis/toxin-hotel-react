@@ -8,9 +8,10 @@ type CheckboxListProps = {
   labelText: string;
   text: string[];
   isActive?: boolean;
+  activeCheckboxes?: boolean[];
 };
 
-export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText, isActive }) => {
+export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText, isActive, activeCheckboxes }) => {
   const [expand, setExpand] = useState<boolean>(false);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [_active, setActive] = useState<boolean>(false);
@@ -38,9 +39,9 @@ export const CheckboxList: FC<CheckboxListProps> = ({ text, labelText, isActive 
         {expand ? <ExpandLess sx={{ fontSize: "24px" }} className={styles.icon}></ExpandLess> : <ExpandMore sx={{ fontSize: "24px" }} className={styles.icon}></ExpandMore>}
       </div>
       <ul className={expand ? styles.list : clsx(styles.list, styles.list_disabled)}>
-        {text.map((value) => (
+        {text.map((value, index) => (
           <li className={styles.li}>
-            <Checkbox label={value} />
+            <Checkbox label={value} isChecked={activeCheckboxes !== undefined && activeCheckboxes[index] ? true : false} />
           </li>
         ))}
       </ul>
