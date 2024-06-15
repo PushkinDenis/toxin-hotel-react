@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 import styles from "./checkbox.module.scss";
 import { Checkbox as CheckboxMui, StyledEngineProvider } from "@mui/material";
 import { CheckboxDefault, CheckboxChecked } from "@shared";
@@ -8,14 +8,25 @@ type CheckboxProps = {
   type?: string;
   label?: string;
   description?: string;
+  isActive?: boolean;
 };
 
-export const Checkbox: FC<CheckboxProps> = ({ label, description, type }) => {
+export const Checkbox: FC<CheckboxProps> = ({ label, description, type, isActive }) => {
+  const [active, setActive] = useState<boolean>(false);
+  const handleActive = () => {
+    active ? setActive(false) : setActive(true);
+  };
+  useEffect(() => {
+    if (isActive) {
+      setActive(true);
+    }
+  }, []);
+
   return (
     <>
       <StyledEngineProvider injectFirst>
         <label className={type === "rich" ? clsx(styles.form, styles.form_rich) : styles.form}>
-          <CheckboxMui className={styles.checkbox} icon={<CheckboxDefault />} checkedIcon={<CheckboxChecked />} />
+          <CheckboxMui onClick={handleActive} className={styles.checkbox} icon={<CheckboxDefault />} checkedIcon={<CheckboxChecked />} checked={active} />
           {type === "rich" ? (
             <div className={styles.label_wrapper}>
               <div className={clsx(styles.label_rich, styles.label)}>{label}</div>

@@ -38,6 +38,7 @@ export const FormElements: FC = () => {
           <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} />
           <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
           <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
+          <Checkbox label="Можно курить" isActive={true} />
         </div>
 
         <TextField placeholder={"Email"} type={"subscription"} />
