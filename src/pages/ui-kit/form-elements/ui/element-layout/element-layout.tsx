@@ -12,8 +12,18 @@ type ElementLayoutProps = {
 };
 
 export const ElementLayout: FC<ElementLayoutProps> = ({ children, label, state, type }) => {
+  const handleClass = () => {
+    if (type === "small") {
+      return clsx(styles.element_wrapper, styles.element_wrapper_small);
+    } else if (type === "second_col") {
+      return clsx(styles.element_wrapper_second_col);
+    } else {
+      return styles.element_wrapper;
+    }
+  };
+
   return (
-    <div className={type === "small" ? clsx(styles.element_wrapper, styles.element_wrapper_small) : styles.element_wrapper}>
+    <div className={handleClass()}>
       <div className={styles.label_wrapper}>
         <Label text={label} />
         <StateDescription text={state} />

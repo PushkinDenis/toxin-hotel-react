@@ -75,7 +75,9 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
             value={handleValue()}
             onChange={handleValue}
             input={<OutlinedInput label="Tag" />}
-            MenuProps={{ classes: { paper: styles.paper } }}
+            MenuProps={{
+              classes: { paper: styles.paper },
+            }}
             placeholder={"Всего гостей"}
             renderValue={(selected) => selected.join(", ")}
           >

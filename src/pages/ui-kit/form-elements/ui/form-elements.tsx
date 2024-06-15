@@ -42,7 +42,13 @@ export const FormElements: FC = () => {
           </div>
         </div>
 
-        <div className={styles.second_col}></div>
+        <div className={styles.second_col}>
+          <ElementLayout label={"Checkbox Buttons"} type="second_col">
+            <Checkbox label="Можно курить" />
+            <Checkbox label="Можно с питомцами" />
+            <Checkbox label="Можно пригласить гостей (до 10 человек)" />
+          </ElementLayout>
+        </div>
 
         <Checkbox label="Можно курить" />
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
