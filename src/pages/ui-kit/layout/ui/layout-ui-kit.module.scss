@@ -13,6 +13,16 @@
     margin-left: 150px;
     margin-right: 158px;
   }
+
+  &_form_elements {
+    & > main {
+      display: flex;
+      flex-direction: column;
+      margin-left: 141px;
+      margin-right: 141px;
+      min-width: 1158px;
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
