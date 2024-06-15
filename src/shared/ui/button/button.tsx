@@ -8,10 +8,12 @@ import { ArrowForward } from "@mui/icons-material";
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: string;
   text: string;
+  isClicked?: boolean;
 };
 
-export const Button: React.FC<ButtonProps> = ({ variant, text, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicked }) => {
   const [click, setClick] = React.useState<boolean>(false);
+
   const handleClick = () => {
     click ? setClick(false) : setClick(true);
   };

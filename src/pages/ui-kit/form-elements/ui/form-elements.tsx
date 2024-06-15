@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { LayoutUiKit, ElementLayout } from "@pages";
-import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, CheckboxList, BulletList, Feature } from "@shared";
+import { Dropdown, TextField, DatePickerDropdown, Checkbox, Radio, Switch, Rating, Button, Slider, Pagination, CheckboxList, BulletList, Feature, Label } from "@shared";
 import { Review } from "@widgets";
 import styles from "./form-elements.module.scss";
 
@@ -73,14 +73,23 @@ export const FormElements: FC = () => {
         </div>
         <div className={styles.third_col}>
           <Slider label={"RANGE SLIDER"} />
+          <div className={styles.button}>
+            <Label text={"buttons"} />
+            <div className={styles.buttons_wrapper}>
+              <Button variant="contained" text="CLICK ME" />
+              <Button variant="contained" text="CLICK ME" />
+              <Button variant="outlined" text="CLICK ME" />
+              <Button variant="outlined" text="CLICK ME" />
+              <div className={styles.button_text_wrapper}>
+                <Button variant={"text"} text={"CLICK ME"} />
+                <Button variant={"text"} text={"CLICK ME"} />
+              </div>
+            </div>
+            <Button variant={"wide"} text={"перейти к оплате"} />
+          </div>
         </div>
 
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
-
-        <Button variant="outlined" text="12" />
-        <Button variant="contained" text="12" />
-        <Button variant={"text"} text={"dvs"} />
-        <Button variant={"wide"} text={"перейти к оплате"} />
 
         <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
