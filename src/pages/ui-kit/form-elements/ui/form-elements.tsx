@@ -28,18 +28,18 @@ export const FormElements: FC = () => {
           <ElementLayout label={"subscription text field"}>
             <TextField type={"subscription"} placeholder={"Email"} />
           </ElementLayout>
-          <ElementLayout label={"dropdown"} state="Default" type="small">
-            <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />
-          </ElementLayout>
-          <ElementLayout label={"dropdown"} state="expanded" type="small">
-            <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} isActive={true} values={[3, 2, 6]} />
-          </ElementLayout>
-          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
-          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} activeCheckboxes={[true, false, true, false, false, false]} />
-          <div className={styles.features_wrapper}>
-            <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
-            <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
-          </div>
+          {/*<ElementLayout label={"dropdown"} state="Default" type="small">*/}
+          {/*  <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} />*/}
+          {/*</ElementLayout>*/}
+          {/*<ElementLayout label={"dropdown"} state="expanded" type="small">*/}
+          {/*  <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} isActive={true} values={[3, 2, 6]} />*/}
+          {/*</ElementLayout>*/}
+          {/*<CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />*/}
+          {/*<CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} activeCheckboxes={[true, false, true, false, false, false]} />*/}
+          {/*<div className={styles.features_wrapper}>*/}
+          {/*  <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />*/}
+          {/*  <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />*/}
+          {/*</div>*/}
         </div>
 
         <div className={styles.second_col}>
@@ -71,6 +71,9 @@ export const FormElements: FC = () => {
             </div>
           </ElementLayout>
         </div>
+        <div className={styles.third_col}>
+          <Slider label={"RANGE SLIDER"} />
+        </div>
 
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
 
@@ -78,7 +81,7 @@ export const FormElements: FC = () => {
         <Button variant="contained" text="12" />
         <Button variant={"text"} text={"dvs"} />
         <Button variant={"wide"} text={"перейти к оплате"} />
-        <Slider label={"RANGE SLIDER"} />
+
         <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
 

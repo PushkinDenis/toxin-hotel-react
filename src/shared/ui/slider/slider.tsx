@@ -7,7 +7,7 @@ type SliderProps = {
 };
 
 export const Slider: FC<SliderProps> = ({ label }) => {
-  const [value, setValue] = useState<number[]>([0, 10000]);
+  const [value, setValue] = useState<number[]>([5000, 10000]);
 
   const handleChange = (_event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
