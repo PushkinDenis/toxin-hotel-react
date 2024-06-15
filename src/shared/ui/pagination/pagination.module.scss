@@ -58,13 +58,17 @@
 
 .wrapper {
   display: flex;
-  align-items: center;
+  align-items: start;
   flex-direction: column;
   min-width: 240px;
   max-width: 280px;
 }
 
 .description {
-  @include var.text;
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--color-dark-shade-75);
   margin-top: 10px;
+  align-self: center;
 }

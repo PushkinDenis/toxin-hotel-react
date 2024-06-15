@@ -73,7 +73,7 @@ export const FormElements: FC = () => {
         </div>
         <div className={styles.third_col}>
           <Slider label={"RANGE SLIDER"} />
-          <div className={styles.button}>
+          <div className={styles.buttons}>
             <Label text={"buttons"} />
             <div className={styles.buttons_wrapper}>
               <Button variant="contained" text="CLICK ME" />
@@ -87,11 +87,13 @@ export const FormElements: FC = () => {
             </div>
             <Button variant={"wide"} text={"перейти к оплате"} />
           </div>
+          <ElementLayout label={"pagination"}>
+            <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
+          </ElementLayout>
         </div>
 
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
 
-        <Pagination text={"1 – 12 из 100+ вариантов аренды"} />
         <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
 
         <BulletList text={["Нельзя с питомцами", "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]} />

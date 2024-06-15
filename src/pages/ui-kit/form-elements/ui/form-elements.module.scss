@@ -4,6 +4,7 @@
 
 .first_col {
   display: flex;
+  height: 731px;
   flex-direction: column;
   width: 320px;
 
@@ -19,6 +20,7 @@
 
 .second_col {
   display: flex;
+  height: 731px;
   flex-direction: column;
   min-width: 320px;
 
@@ -91,11 +93,18 @@
 }
 
 .third_col {
+  height: 731px;
   display: flex;
   flex-direction: column;
 
   & > div:nth-child(1) {
     margin-bottom: 40px;
+  }
+
+  & > div:last-child {
+    & > div:first-child {
+      margin-bottom: 16px;
+    }
   }
 }
 
@@ -104,6 +113,7 @@
   flex-direction: column;
   min-width: 320px;
   width: 320px;
+  margin-bottom: 40px;
 }
 
 .buttons_wrapper {
