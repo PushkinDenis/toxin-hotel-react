@@ -13,7 +13,7 @@ export const FormElements: FC = () => {
             <TextField placeholder={"Email"} />
           </ElementLayout>
           <ElementLayout label={"Text Field"} state={"Hover / Focus"}>
-            <TextField placeholder={"Email"} value={"Email"} isActive={true} />
+            <TextField placeholder={"Email"} value={"This is pretty awesome"} isActive={true} />
           </ElementLayout>
           <ElementLayout label={"Dropdown"}>
             <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
@@ -36,12 +36,13 @@ export const FormElements: FC = () => {
           </ElementLayout>
           <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
           <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} activeCheckboxes={[true, false, true, false, false, false]} />
-          <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
-          <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
-          <Checkbox label="Можно курить" isChecked={true} />
+          <div className={styles.features_wrapper}>
+            <Feature img={"./icons/insert_emoticon.svg"} text={"Комфорт"} description={"Шумопоглощающие стены"} />
+            <Feature img={"./icons/location_city.svg"} text={"Удобство"} description={"Окно в каждой из спален"} />
+          </div>
         </div>
 
-        <TextField placeholder={"Email"} type={"subscription"} />
+        <div className={styles.second_col}></div>
 
         <Checkbox label="Можно курить" />
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
