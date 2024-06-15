@@ -45,14 +45,17 @@ export const FormElements: FC = () => {
         <div className={styles.second_col}>
           <ElementLayout label={"Checkbox Buttons"} type="second_col">
             <Checkbox label="Можно курить" />
-            <Checkbox label="Можно с питомцами" />
-            <Checkbox label="Можно пригласить гостей (до 10 человек)" />
+            <Checkbox label="Можно с питомцами" isChecked={true} />
+            <Checkbox label="Можно пригласить гостей (до 10 человек)" isChecked={true} />
+          </ElementLayout>
+          <ElementLayout label={"Radio Buttons"} type="second_col">
+            <Radio label="Мужчина" isChecked={true} />
+            <Radio label="Женщина" />
           </ElementLayout>
         </div>
 
-        <Checkbox label="Можно курить" />
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
-        <Radio label="Мужчины" />
+
         <Switch label="Собаки" />
         <Rating />
         <Button variant="like" text="1" />
