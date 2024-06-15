@@ -2,7 +2,11 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   height: 67px;
-  
+
+  &_second_col {
+    display: flex;
+    flex-direction: column;
+  }
 
   &_small {
     width: 266px;

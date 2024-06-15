@@ -49,17 +49,31 @@ export const FormElements: FC = () => {
             <Checkbox label="Можно пригласить гостей (до 10 человек)" isChecked={true} />
           </ElementLayout>
           <ElementLayout label={"Radio Buttons"} type="second_col">
-            <Radio label="Мужчина" isChecked={true} />
-            <Radio label="Женщина" />
+            <div className={styles.inline_wrapper}>
+              <Radio label="Мужчина" isChecked={true} />
+              <Radio label="Женщина" />
+            </div>
+          </ElementLayout>
+          <ElementLayout label={"Toggle"} type="second_col">
+            <Switch label="Получать спецпредложения" isChecked={true} />
+            <Switch label="Получать спецпредложения" />
+          </ElementLayout>
+          <ElementLayout label={"like button"} type="second_col">
+            <div className={styles.inline_wrapper}>
+              <Button variant="like" text="2" />
+              <Button variant="like" text="12" />
+            </div>
+          </ElementLayout>
+          <ElementLayout label={"rate button"} type="second_col">
+            <div className={styles.inline_wrapper}>
+              <Rating defaultValue={4} />
+              <Rating defaultValue={5} />
+            </div>
           </ElementLayout>
         </div>
 
         <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
 
-        <Switch label="Собаки" />
-        <Rating />
-        <Button variant="like" text="1" />
-        <Button variant="like" text="12" />
         <Button variant="outlined" text="12" />
         <Button variant="contained" text="12" />
         <Button variant={"text"} text={"dvs"} />
