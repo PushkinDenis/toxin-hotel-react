@@ -66,7 +66,6 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
           <Select
             open={open}
-            readOnly
             onOpen={handleOpen}
             onClose={handleClose}
             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
