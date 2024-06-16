@@ -1,15 +1,16 @@
 import * as React from "react";
-import { FC } from "react";
+import { FC, useRef } from "react";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import { Button, Counter } from "@shared";
-import { StyledEngineProvider, SvgIcon } from "@mui/material";
+import { PopperProps, StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
 import { clsx } from "clsx";
+import { MenuProps } from "@mantine/core";
 
 type DropdownProps = {
   items: string[];
@@ -21,6 +22,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
   const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
   const [open, setOpen] = React.useState(false);
+  const selectRef = useRef<null | HTMLElement>(null);
 
   React.useEffect(() => {
     if (isActive) {
@@ -69,14 +71,25 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
             onClose={handleClose}
             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
             className={styles.select}
-            labelId="demo-multiple-checkbox-label"
-            id="demo-multiple-checkbox"
             multiple
+            ref={selectRef}
             value={handleValue()}
             onChange={handleValue}
             input={<OutlinedInput label="Tag" />}
             MenuProps={{
-              classes: { paper: styles.paper },
+              anchorEl: selectRef.current,
+              disableScrollLock: true,
+              anchorOrigin: {
+                vertical: "bottom",
+                horizontal: "left",
+              },
+              transformOrigin: {
+                vertical: "top",
+                horizontal: "left",
+              },
+              PaperProps: {
+                className: styles.paper,
+              },
             }}
             placeholder={"Всего гостей"}
             renderValue={(selected) => selected.join(", ")}
@@ -112,7 +125,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
             value={handleValue()}
             onChange={handleValue}
             input={<OutlinedInput label="Tag" />}
-            MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) } }}
+            MenuProps={{ classes: { paper: clsx(styles["paper-small"], styles.paper) }, disableScrollLock: true }}
             placeholder={"Всего гостей"}
             renderValue={(selected) => selected.join(", ")}
           >
