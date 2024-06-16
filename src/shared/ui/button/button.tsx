@@ -6,7 +6,7 @@ import clsx from "clsx";
 import { ArrowForward } from "@mui/icons-material";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
-  variant: string;
+  variant: "text" | "outlined" | "contained" | "wide" | "like";
   text: string;
   isClicked?: boolean;
 };

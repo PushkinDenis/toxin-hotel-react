@@ -11,6 +11,7 @@ $selectWidthSmall: 266px;
   --color-purple: #bc9cff;
   --color-green: #6fcf97;
   --color-background: #F4F4F6;
+  --color-black: #000000;
 
   --font: Montserrat;
 
@@ -70,4 +71,22 @@ $selectWidthSmall: 266px;
   color: var(--color-dark-shade-100);
   font-weight: 700;
   line-height: 29.26px;
+}
+
+@mixin card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  width: 380px;
+  border: 1px solid #0000001F;
+  box-shadow: 0 0 25px 0 #00000033;
+  padding: 40px 30px 30px 30px;
+  border-radius: 4px;
+}
+
+@mixin textBlack {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-black);
 }

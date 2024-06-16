@@ -3,6 +3,7 @@ import styles from "./text-field.module.scss";
 import { FormControl, OutlinedInput, StyledEngineProvider, InputAdornment } from "@mui/material";
 import clsx from "clsx";
 import { ExpandMore, ArrowForward } from "@mui/icons-material";
+import { useMask } from "@react-input/mask";
 
 type TextFieldProps = {
   isActive?: boolean;
@@ -11,8 +12,9 @@ type TextFieldProps = {
   type?: string;
   icon?: boolean;
   value?: string | undefined;
+  mask?: boolean;
 };
-export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, value, isActive }) => {
+export const TextField: FC<TextFieldProps> = ({ mask, placeholder, onClick, type, value, isActive }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleClass = () => {
@@ -64,24 +66,41 @@ export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, valu
       return clsx(styles["form-control"]);
     }
   };
-
+  const inputRef = useMask({ mask: "ДД.ММ.ГГГГ", replacement: { _: /\d/ } });
   return (
     <>
       <StyledEngineProvider injectFirst>
         <FormControl className={handleFormClass()} sx={{ "& fieldset": { border: "none", padding: "0" } }}>
-          <OutlinedInput
-            readOnly={type === "date" || type === "date-wide"}
-            onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}
-            value={value}
-            className={handleClass()}
-            endAdornment={handleEndAdornment()}
-            placeholder={placeholder}
-            sx={{
-              "& input": {
-                padding: 0,
-              },
-            }}
-          />
+          {mask ? (
+            <OutlinedInput
+              ref={inputRef}
+              readOnly={type === "date" || type === "date-wide"}
+              onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}
+              value={value}
+              className={handleClass()}
+              endAdornment={handleEndAdornment()}
+              placeholder={placeholder}
+              sx={{
+                "& input": {
+                  padding: 0,
+                },
+              }}
+            />
+          ) : (
+            <OutlinedInput
+              readOnly={type === "date" || type === "date-wide"}
+              onClick={type === "date" || type === "date-wide" ? handleOpen : () => {}}
+              value={value}
+              className={handleClass()}
+              endAdornment={handleEndAdornment()}
+              placeholder={placeholder}
+              sx={{
+                "& input": {
+                  padding: 0,
+                },
+              }}
+            />
+          )}
         </FormControl>
       </StyledEngineProvider>
     </>
