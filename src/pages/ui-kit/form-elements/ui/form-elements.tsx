@@ -96,8 +96,10 @@ export const FormElements: FC = () => {
           <ElementLayout label={"Dropdown"}>
             <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} isActive={true} values={[2, 1, 0]} />
           </ElementLayout>
-          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
-          <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} activeCheckboxes={[true, false, true, false, false, false]} />
+          <div className={styles.checkbox_list_wrapper}>
+            <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
+            <CheckboxList labelText={"expandable checkbox list"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} isActive={true} activeCheckboxes={[true, false, true, false, false, false]} />
+          </div>
           <ElementLayout label={"Rich Checkbox Buttons"}>
             <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
             <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />

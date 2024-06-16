@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: column;
+  width: 1444px;
 }
 
 .columns_wrapper {
@@ -53,11 +54,15 @@
 
     & > div:nth-child(1) {
       margin-bottom: 16px;
+    }
 
+    & > div:nth-child(2) {
       & > label:nth-child(1) {
         margin-right: 20px;
       }
     }
+
+
   }
 
   & > div:nth-child(3) {
@@ -143,10 +148,75 @@
   }
 }
 
+.dropdown_wrapper {
+  & > div:nth-child(1) {
+    margin-bottom: 20px;
+  }
+}
+
+.checkbox_list_wrapper {
+  & > div:nth-child(1) {
+    margin-bottom: 40px;
+  }
+
+  margin-bottom: 288px;
+}
+
 .last_row {
   display: grid;
   width: 1158px;
   grid-template-columns: 447px 392px 319px;
+  grid-template-areas:
+          "a b c"
+          "d e f"
+          "j h h";
+
+  & > div:first-child {
+    grid-area: a;
+  }
+
+  & > div:nth-child(2) {
+    grid-area: b;
+  }
+
+  & > div:nth-child(3) {
+    grid-area: c;
+  }
+
+  & > div:nth-child(4) {
+    grid-area: d;
+    margin-top: 258px;
+  }
+
+  & > div:nth-child(5) {
+    grid-area: e;
+    margin-top: 258px;
+
+    & > div:nth-child(1) {
+      margin-bottom: 16px;
+    }
+  }
+
+  & > div:nth-child(6) {
+    grid-area: f;
+    margin-top: 258px;
+
+    & > div:nth-child(1) {
+      margin-bottom: 20px;
+    }
+  }
+
+  & > div:nth-child(7) {
+    grid-area: j;
+
+    & > div:last-child {
+      margin-top: 20px;
+    }
+  }
+
+  & > div:nth-child(8) {
+    grid-area: h;
+  }
 }
 
 @media only screen and (max-width: 600px) {
