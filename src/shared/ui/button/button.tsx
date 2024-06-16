@@ -25,7 +25,7 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicke
         </ButtonMui>
       )}
       {variant === "outlined" && (
-        <div className={styles.outline_wrapper}>
+        <div className={isClicked ? clsx(styles.outline_wrapper, styles.outline) : clsx(styles.outline_wrapper)}>
           <ButtonMui variant="outlined" className={styles.outlined}>
             {text}
           </ButtonMui>
@@ -42,8 +42,8 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicke
         </ButtonMui>
       )}
       {variant === "like" && (
-        <ButtonMui variant="outlined" className={click ? clsx(styles.like, styles.like_active) : styles.like} onClick={handleClick}>
-          {click ? <LikeActive className={styles.icon} /> : <Like className={styles.icon} />}
+        <ButtonMui variant="outlined" className={click || isClicked ? clsx(styles.like, styles.like_active) : styles.like} onClick={handleClick}>
+          {click || isClicked ? <LikeActive className={styles.icon} /> : <Like className={styles.icon} />}
           {click ? `${+text + 1}` : text}
         </ButtonMui>
       )}

@@ -22,7 +22,7 @@ export const FormElements: FC = () => {
             <ElementLayout label={"masked text field"}>
               <TextField placeholder={"ДД.ММ.ГГГГ"} />
             </ElementLayout>
-            <DatePickerDropdown type={"date"} label_first="date dropdown" label_second="date dropdown" />
+            <DatePickerDropdown type={"date"} label_first="date dropdown" label_second="date dropdown" defaultSecondValue={"19.08.2019"} />
             <ElementLayout label={"filter date dropdown"}>
               <DatePickerDropdown type={"date-wide"} />
             </ElementLayout>
@@ -50,7 +50,7 @@ export const FormElements: FC = () => {
             <ElementLayout label={"like button"} type="second_col">
               <div className={styles.inline_wrapper}>
                 <Button variant="like" text="2" />
-                <Button variant="like" text="12" />
+                <Button variant="like" text="12" isClicked={true} />
               </div>
             </ElementLayout>
             <ElementLayout label={"rate button"} type="second_col">
@@ -68,7 +68,7 @@ export const FormElements: FC = () => {
                 <Button variant="contained" text="CLICK ME" />
                 <Button variant="contained" text="CLICK ME" />
                 <Button variant="outlined" text="CLICK ME" />
-                <Button variant="outlined" text="CLICK ME" />
+                <Button variant="outlined" text="CLICK ME" isClicked={true} />
                 <div className={styles.button_text_wrapper}>
                   <Button variant={"text"} text={"CLICK ME"} />
                   <Button variant={"text"} text={"CLICK ME"} />

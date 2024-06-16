@@ -7,9 +7,11 @@ type DatePickerDropdownProps = {
   type?: string;
   label_first?: string;
   label_second?: string;
+  defaultFirstValue?: string;
+  defaultSecondValue?: string;
 };
 
-export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_first, label_second }) => {
+export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
   const [open, setOpen] = useState<boolean>(false);
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
@@ -18,6 +20,26 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_fi
   };
   const handleOpen = (open: boolean) => {
     setOpen(open);
+  };
+
+  const handleFirstValue = () => {
+    if (value && value[0]) {
+      return parseDate(`${value[0]}`);
+    } else if (defaultFirstValue) {
+      return defaultFirstValue;
+    } else {
+      return "";
+    }
+  };
+
+  const handleSecondValue = () => {
+    if (value && value[1]) {
+      return parseDate(`${value[1]}`);
+    } else if (defaultSecondValue) {
+      return defaultSecondValue;
+    } else {
+      return "";
+    }
   };
 
   return (
@@ -30,8 +52,8 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_fi
               <Label text={label_second} />
             </div>
             <div className={styles.inputs_wrapper}>
-              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? parseDate(`${value[0]}`) : ""} />
-              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[1] ? parseDate(`${value[1]}`) : ""} />
+              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={handleFirstValue()} />
+              <TextField onClick={handleOpen} type={"date"} placeholder={"ДД.ММ.ГГГГ"} value={handleSecondValue()} />
             </div>
           </>
         )}

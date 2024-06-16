@@ -13,6 +13,10 @@
   padding: 13px 0 13px 15px;
   z-index: 100;
 
+  & :global .MuiOutlinedInput-input {
+    padding: 0;
+  }
+
   &-small {
     width: vars.$selectWidthSmall;
   }
@@ -131,8 +135,10 @@
     padding: 0;
   }
 }
+
 .form-control {
   width: vars.$selectWidth;
+
   &_small {
     width: vars.$selectWidthSmall;
   }
