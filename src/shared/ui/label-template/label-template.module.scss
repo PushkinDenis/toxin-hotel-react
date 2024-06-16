@@ -1,0 +1,8 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+
+  & > h3:first-child {
+    margin-bottom: 5px;
+  }
+}

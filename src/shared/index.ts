@@ -26,3 +26,5 @@ export * from "./ui/checkbox-list/checkbox-list.tsx";
 export * from "./ui/bullet-list/bullet-list.tsx";
 export * from "./ui/feature/feature.tsx";
 export * from "./ui/state-description/state-description.tsx";
+export * from "./ui/widget-title/widget-title.tsx";
+export * from "./ui/label-template/label-template.tsx";
