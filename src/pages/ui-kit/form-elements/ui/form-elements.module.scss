@@ -137,6 +137,24 @@
   width: 195px;
   grid-template-columns: repeat(2, 1fr);
   margin-top: 16px;
+
+  & > button:nth-child(2) {
+    background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+    opacity: 0.5;
+    box-shadow: none;
+  }
+
+  & > button:nth-child(4) {
+    & > ::before {
+      background: #d1cffe;
+    }
+  }
+
+  & > div:last-child {
+    & > button:nth-child(2) {
+      color: var(--color-dark-shade-50);
+    }
+  }
 }
 
 .button_text_wrapper {

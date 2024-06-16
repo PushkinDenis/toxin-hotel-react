@@ -6,11 +6,10 @@ import FormControl from "@mui/material/FormControl";
 import ListItemText from "@mui/material/ListItemText";
 import Select from "@mui/material/Select";
 import { Button, Counter } from "@shared";
-import { PopperProps, StyledEngineProvider, SvgIcon } from "@mui/material";
+import { StyledEngineProvider, SvgIcon } from "@mui/material";
 import styles from "./dropdown.module.scss";
 import { ExpandMore } from "@mui/icons-material";
 import { clsx } from "clsx";
-import { MenuProps } from "@mantine/core";
 
 type DropdownProps = {
   items: string[];
@@ -67,6 +66,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
         <FormControl className={styles["form-control"]} sx={{ "& fieldset": { border: "none" } }}>
           <Select
             open={open}
+            readOnly
             onOpen={handleOpen}
             onClose={handleClose}
             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
@@ -83,12 +83,18 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
                 vertical: "bottom",
                 horizontal: "left",
               },
+              anchorPosition: {
+                top: 0,
+                left: 0,
+              },
+
               transformOrigin: {
                 vertical: "top",
                 horizontal: "left",
               },
               PaperProps: {
                 className: styles.paper,
+                elevation: 0,
               },
             }}
             placeholder={"Всего гостей"}
