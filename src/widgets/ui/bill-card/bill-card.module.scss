@@ -2,7 +2,7 @@
 
 .wrapper {
   @include vars.card;
-  height: 512px;
+  height: fit-content;
   & > div:nth-child(1) {
     margin-bottom: 20px;
   }
