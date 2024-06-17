@@ -28,12 +28,20 @@
 }
 
 .label_text {
-  @include vars.textGrey
+  @include vars.textGrey;
 }
 
 .title {
   display: inline-flex;
   align-items: baseline;
+
+  & > h1:nth-child(1) {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  & > p:nth-child(2) {
+    text-transform: none;
+  }
 }
 
 .price {
