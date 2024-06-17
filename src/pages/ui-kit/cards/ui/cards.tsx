@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { CardsLayout } from "@pages";
-import { FindRoomCard, SignUpCard, LogInCard } from "@widgets";
+import { FindRoomCard, SignUpCard, LogInCard, BillCard } from "@widgets";
 
 export const Cards: FC = () => {
   return (
@@ -8,6 +8,7 @@ export const Cards: FC = () => {
       <FindRoomCard />
       <SignUpCard />
       <LogInCard />
+      <BillCard />
     </CardsLayout>
   );
 };

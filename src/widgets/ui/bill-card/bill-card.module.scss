@@ -1,0 +1,42 @@
+@use "../../../variables" as vars;
+
+.wrapper {
+  @include vars.card;
+  height: 512px;
+}
+.label_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.label_left {
+  display: inline-flex;
+  align-items: center;
+  & > p:nth-child(2) {
+    margin-left: 8px;
+  }
+}
+.label_right {
+  align-items: center;
+  & > span:nth-child(1) {
+    font-weight: 700;
+  }
+}
+.label_text {
+  @include vars.textGrey;
+}
+.total_price {
+  display: inline-flex;
+  width: 320px;
+  height: fit-content;
+  justify-content: space-between;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 182px;
+    border: 1px solid red;
+    top: 100%;
+  }
+}

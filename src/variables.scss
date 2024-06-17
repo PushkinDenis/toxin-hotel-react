@@ -10,7 +10,7 @@ $selectWidthSmall: 266px;
   --color-dark-shade-5: #f3f4f5;
   --color-purple: #bc9cff;
   --color-green: #6fcf97;
-  --color-background: #F4F4F6;
+  --color-background: #f4f4f6;
   --color-black: #000000;
 
   --font: Montserrat;
@@ -78,7 +78,7 @@ $selectWidthSmall: 266px;
   flex-direction: column;
   background-color: var(--color-white);
   width: 380px;
-  border: 1px solid #0000001F;
+  border: 1px solid #0000001f;
   box-shadow: 0 0 25px 0 #00000033;
   padding: 40px 30px 30px 30px;
   border-radius: 4px;
@@ -89,4 +89,19 @@ $selectWidthSmall: 266px;
   font-size: 14px;
   line-height: 18px;
   color: var(--color-black);
+}
+
+@mixin textPurple {
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 14px;
+  font-weight: 700;
+  color: var(--color-purple);
+}
+
+@mixin textGrey {
+  font-family: var(--font);
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--color-dark-shade-50);
 }

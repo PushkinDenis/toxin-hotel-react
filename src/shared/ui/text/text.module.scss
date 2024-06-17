@@ -3,3 +3,11 @@
 .text_black {
   @include vars.textBlack;
 }
+
+.text_purple {
+  @include vars.textPurple;
+}
+
+.text_grey {
+  @include vars.textGrey;
+}
