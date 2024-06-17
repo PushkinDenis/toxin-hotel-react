@@ -11,6 +11,9 @@
   z-index: 1300;
   background: white;
   top: 108%;
+  &_static {
+    position: static;
+  }
 }
 
 .buttons-wrapper {

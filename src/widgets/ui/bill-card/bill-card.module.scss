@@ -3,6 +3,17 @@
 .wrapper {
   @include vars.card;
   height: 512px;
+  & > div:nth-child(1) {
+    margin-bottom: 20px;
+  }
+
+  & > div:nth-child(2) {
+    margin-bottom: 20px;
+  }
+
+  & > div:nth-child(3) {
+    margin-bottom: 20px;
+  }
 }
 .label_wrapper {
   display: flex;
@@ -31,6 +42,7 @@
   height: fit-content;
   justify-content: space-between;
   position: relative;
+  margin-bottom: 20px;
   & h1:last-child {
     z-index: 1;
   }
@@ -43,4 +55,33 @@
     left: 80px;
     z-index: 0;
   }
+}
+
+.expenses {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+  gap: 10px;
+  margin-bottom: 30px;
+  & > .expense:nth-child(n + 2):nth-child(-n + 3) {
+    position: relative;
+    &::before {
+      content: url("./icons/information.svg");
+      position: absolute;
+      left: 217px;
+    }
+  }
+}
+.expense {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  & > span:first-child {
+    width: 214px;
+    text-align: start;
+  }
+}
+
+.text {
+  @include vars.textBody;
 }

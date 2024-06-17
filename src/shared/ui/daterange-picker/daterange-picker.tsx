@@ -7,6 +7,7 @@ import "dayjs/locale/ru";
 import styles from "./daterange-picker.module.scss";
 import { ArrowBack, ArrowForward } from "@mui/icons-material";
 import { Button } from "@shared";
+import clsx from "clsx";
 
 interface CustomDatePickerProps {
   classNames?: {
@@ -18,15 +19,16 @@ interface CustomDatePickerProps {
     tbody?: string;
     weekdaysRow?: string;
   };
-  val: [Date | null, Date | null];
+  val?: [Date | null, Date | null];
   open?: any;
   onChange?: (value: [Date | null, Date | null]) => void;
   handleClose?: (buttonprop: any) => void;
   handleVal?: (buttonprop: any) => void;
+  isStatic?: boolean;
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
-  const { val, onChange, handleClose, handleVal } = props;
+  const { val, onChange, handleClose, handleVal, isStatic } = props;
   const [_open, setOpen] = useState<boolean>(false);
   const [valu, setValu] = useState([null, null]);
   const handleValue = (newValue: [Date | null, Date | null]) => {
@@ -41,7 +43,7 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
 
   return (
     <MantineProvider>
-      <div className={styles.wrapper}>
+      <div className={isStatic ? clsx(styles.wrapper, styles.wrapper_static) : styles.wrapper}>
         <DatesProvider settings={{ locale: "ru" }}>
           <DatePicker
             previousIcon={<ArrowBack sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}

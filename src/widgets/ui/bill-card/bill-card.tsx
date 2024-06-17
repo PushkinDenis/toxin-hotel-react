@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./bill-card.module.scss";
-import { WidgetTitle, TextField, Text, Button, DatePickerDropdown, LabelTemplate, Dropdown } from "@shared";
+import { WidgetTitle, Text, Button, DatePickerDropdown, LabelTemplate, Dropdown } from "@shared";
 
 export const BillCard: FC = () => {
   return (
@@ -19,7 +19,20 @@ export const BillCard: FC = () => {
       <LabelTemplate label={"гости"}>
         <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
       </LabelTemplate>
-
+      <div className={styles.expenses}>
+        <div className={styles.expense}>
+          <span className={styles.text}>9 990₽ х 4 суток</span>
+          <span className={styles.text}>39 960₽</span>
+        </div>
+        <div className={styles.expense}>
+          <span className={styles.text}>Сбор за услуги: скидка 2 179₽</span>
+          <span className={styles.text}>0₽</span>
+        </div>
+        <div className={styles.expense}>
+          <span className={styles.text}>Сбор за дополнительные услуги</span>
+          <span className={styles.text}>300₽</span>
+        </div>
+      </div>
       <div className={styles.total_price}>
         <WidgetTitle text={"Итого"} />
         <WidgetTitle text={"38 081₽"} />

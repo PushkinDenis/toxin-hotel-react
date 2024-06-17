@@ -13,7 +13,7 @@ type TextFieldProps = {
   value?: string | undefined;
   mask?: boolean;
 };
-export const TextField: FC<TextFieldProps> = ({ mask, placeholder, onClick, type, value, isActive }) => {
+export const TextField: FC<TextFieldProps> = ({ placeholder, onClick, type, value, isActive }) => {
   const [open, setOpen] = useState<boolean>(false);
 
   const handleClass = () => {
