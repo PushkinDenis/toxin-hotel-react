@@ -1,0 +1,42 @@
+@use "../../../variables" as vars;
+
+.wrapper {
+  @include vars.room;
+}
+
+.image {
+  width: 270px;
+  height: 150px;
+}
+
+.row_first {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 19px 20px;
+}
+
+.row_second {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label_text {
+  @include vars.textGrey
+}
+
+.title {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.price {
+  display: inline-flex;
+  align-items: baseline;
+}

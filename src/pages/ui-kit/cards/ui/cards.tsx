@@ -1,11 +1,12 @@
 import { FC } from "react";
 import { CardsLayout } from "@pages";
-import { FindRoomCard, SignUpCard, LogInCard, BillCard } from "@widgets";
+import { FindRoomCard, SignUpCard, LogInCard, BillCard, RoomCard } from "@widgets";
 import { RangeDatePicker } from "@shared";
 
 export const Cards: FC = () => {
   return (
     <CardsLayout>
+      <RoomCard roomNumber={"№ 888"} roomType={"люкс"} price={"9 990₽ "} feedbackNumber={"65"} image={"./pictures/room_1.png"} />
       <FindRoomCard />
       <SignUpCard />
       <LogInCard />
