@@ -31,12 +31,16 @@
   height: fit-content;
   justify-content: space-between;
   position: relative;
-
+  & h1:last-child {
+    z-index: 1;
+  }
   &::before {
     content: "";
     position: absolute;
-    width: 182px;
-    border: 1px solid red;
-    top: 100%;
+    width: 148px;
+    border-bottom: 1px dotted var(--color-dark-shade-25);
+    top: 75%;
+    left: 80px;
+    z-index: 0;
   }
 }
