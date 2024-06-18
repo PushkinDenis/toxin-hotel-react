@@ -2,6 +2,40 @@
 
 .wrapper {
   @include vars.room;
+  position: relative;
+  margin-right: 100px;
+  &::before {
+    content: url("./icons/photo_pagination.svg");
+    position: absolute;
+    top: 129px;
+    left: 214px;
+  }
+  &_photos {
+    position: relative;
+    &::before {
+      content: url("./icons/arrow_back_card.svg");
+      position: absolute;
+      top: 75px;
+      left: 18px;
+      z-index: 11;
+    }
+    &::after {
+      content: url("./icons/photo_pagination.svg");
+      position: absolute;
+      top: 129px;
+      left: 214px;
+    }
+  }
+}
+.container {
+  width: 270px;
+  position: relative;
+  &::after {
+    content: url("./icons/arrow_forward_card.svg");
+    position: absolute;
+    top: 75px;
+    right: 18px;
+  }
 }
 
 .image {
@@ -13,12 +47,17 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  height: 33px;
+  border-bottom: 1px solid var(--color-dark-shade-25);
 }
 
 .main {
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
-  padding: 20px 16px 19px 20px;
+  margin: 20px 16px 19px 20px;
+  height: 67px;
+  width: 233px;
 }
 
 .row_second {
@@ -45,6 +84,5 @@
 }
 
 .price {
-  display: inline-flex;
   align-items: baseline;
 }
