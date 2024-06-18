@@ -6,7 +6,8 @@ import { RangeDatePicker } from "@shared";
 export const Cards: FC = () => {
   return (
     <CardsLayout>
-      <RoomCard type="photos" roomNumber={"№ 888"} roomType={"люкс"} price={"9 990₽ "} feedbackNumber={"65"} image={"./pictures/room_1.png"} />
+      <RoomCard type="photos" roomNumber={"№ 888"} roomType={"люкс"} price={"9 990₽ "} feedbackNumber={"145"} image={"./pictures/room_1.png"} />
+      <RoomCard roomNumber={"№ 840"} roomType={""} price={"9 990₽ "} feedbackNumber={"65"} image={"./pictures/room_2.png"} />
       <FindRoomCard />
       <SignUpCard />
       <LogInCard />
