@@ -1,10 +1,7 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
   width: 100%;
-  align-items: center;
   background-color: var(--color-background);
-
+  min-height: 100vh;
   & > img {
     width: 48px;
     height: 48px;
@@ -12,8 +9,9 @@
   }
 
   & > main {
+    justify-content: center;
     margin: 72px 140px 140px 140px;
     display: flex;
-    flex-direction: column;
+    gap: 40px;
   }
 }
