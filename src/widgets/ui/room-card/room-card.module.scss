@@ -25,16 +25,16 @@
       top: 129px;
       left: 214px;
     }
-  }
-}
-.container {
-  width: 270px;
-  position: relative;
-  &::after {
-    content: url("./icons/arrow_forward_card.svg");
-    position: absolute;
-    top: 75px;
-    right: 18px;
+    & > .container {
+      width: 270px;
+      position: relative;
+      &::after {
+        content: url("./icons/arrow_forward_card.svg");
+        position: absolute;
+        top: 75px;
+        right: 18px;
+      }
+    }
   }
 }
 
