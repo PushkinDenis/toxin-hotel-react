@@ -2,7 +2,7 @@ import { FC } from "react";
 import { CardsLayout } from "@pages";
 import { FindRoomCard, SignUpCard, LogInCard, BillCard, RoomCard } from "@widgets";
 import { RangeDatePicker } from "@shared";
-
+import styles from "./cards.module.scss";
 export const Cards: FC = () => {
   return (
     <CardsLayout>
@@ -12,7 +12,9 @@ export const Cards: FC = () => {
       <SignUpCard />
       <LogInCard />
       <BillCard />
-      <RangeDatePicker isStatic />
+      <div className={styles.date_wrapper}>
+        <RangeDatePicker isStatic />
+      </div>
     </CardsLayout>
   );
 };

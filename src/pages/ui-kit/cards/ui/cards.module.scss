@@ -1,0 +1,58 @@
+.date_wrapper {
+  height: fit-content;
+  width: fit-content;
+  button[aria-label="8 июня 2024"] {
+    color: var(--color-white);
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+    border-radius: 50%;
+  }
+
+  button[aria-label="19 июня 2024"] {
+    position: relative;
+    color: var(--color-white);
+    background-color: #e5e8fe;
+    z-index: 200;
+    border-radius: 0;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    &::before {
+      position: absolute;
+      z-index: -100;
+      color: #ffffff;
+      content: "";
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 50%;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+    }
+  }
+
+  button[aria-label="23 июня 2024"] {
+    position: relative;
+    color: var(--color-white);
+    background-color: #e5e8fe;
+    z-index: 200;
+    border-radius: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    &::before {
+      position: absolute;
+      z-index: -100;
+      color: #ffffff;
+      content: "";
+      background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
+      border-radius: 50%;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+    }
+  }
+  button[aria-label="20 июня 2024"],
+  button[aria-label="21 июня 2024"],
+  button[aria-label="22 июня 2024"] {
+    border-radius: 0;
+    color: var(--color-dark-shade-50);
+    background: #e5e8fe;
+  }
+}
