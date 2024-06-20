@@ -15,11 +15,23 @@ export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
       </div>
       <nav className={styles.navigation}>
         <div className={styles.links}>
-          <span className={styles.link}>О нас</span>
-          <span className={styles.link}>Услуги</span>
-          <span className={styles.link}>Вакансии</span>
-          <span className={styles.link}>Новости</span>
-          <span className={styles.link}>Соглашения</span>
+          <a href="#">
+            <span className={styles.link}>О нас</span>
+          </a>
+          <a href="#">
+            <span className={styles.link}>Услуги</span>
+            <span className={styles.icon}></span>
+          </a>
+          <a href="#">
+            <span className={styles.link}>Вакансии</span>
+          </a>
+          <a href="#">
+            <span className={styles.link}>Новости</span>
+          </a>
+          <a href="#">
+            <span className={styles.link}>Соглашения</span>
+            <span className={styles.icon}></span>
+          </a>
         </div>
         {!isUserAuthorized ? (
           <div className={styles.authorization_buttons}>
