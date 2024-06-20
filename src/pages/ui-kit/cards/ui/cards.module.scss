@@ -1,13 +1,13 @@
 .date_wrapper {
   min-height: fit-content;
   width: fit-content;
-  button[aria-label="8 июня 2024"] {
+  button[aria-label="8 августа 2019"] {
     color: var(--color-white);
     background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
     border-radius: 50%;
   }
 
-  button[aria-label="19 июня 2024"] {
+  button[aria-label="19 августа 2019"] {
     position: relative;
     color: var(--color-white);
     background-color: #e5e8fe;
@@ -28,7 +28,7 @@
     }
   }
 
-  button[aria-label="23 июня 2024"] {
+  button[aria-label="23 августа 2019"] {
     position: relative;
     color: var(--color-white);
     background-color: #e5e8fe;
@@ -48,9 +48,9 @@
       height: inherit;
     }
   }
-  button[aria-label="20 июня 2024"],
-  button[aria-label="21 июня 2024"],
-  button[aria-label="22 июня 2024"] {
+  button[aria-label="20 августа 2019"],
+  button[aria-label="21 августа 2019"],
+  button[aria-label="22 августа 2019"] {
     border-radius: 0;
     color: var(--color-dark-shade-50);
     background: #e5e8fe;

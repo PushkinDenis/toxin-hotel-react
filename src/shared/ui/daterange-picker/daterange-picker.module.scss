@@ -54,7 +54,8 @@
 }
 
 .mantineDatePickerCalendarHeaderLevel {
-  font-size: 16px;
+  @include vars.widgetTitle;
+  font-size: 19px;
 }
 
 .mantineDatePickerDay {
