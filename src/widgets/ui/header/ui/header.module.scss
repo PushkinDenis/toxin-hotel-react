@@ -1,3 +1,5 @@
+@use "../../../../variables.scss" as vars;
+
 .header {
   width: 100%;
   height: 70px;
@@ -17,4 +19,40 @@
 .logo {
   width: fit-content;
   height: fit-content;
+}
+.authorization_buttons {
+  display: flex;
+  align-items: center;
+  & > div:nth-child(1) {
+    width: 87px;
+    height: 34px;
+    & > button:nth-child(1) {
+      width: 83px;
+      height: 30px;
+    }
+  }
+  & > button:nth-child(2) {
+    width: 196px;
+    height: 34px;
+    margin-left: 20px;
+  }
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  width: 447px;
+  height: 21px;
+  margin-right: 20px;
+  & > .link:nth-child(1) {
+    font-weight: 700;
+    color: var(--color-dark-shade-75);
+  }
+}
+.link {
+  @include vars.textGrey;
+}
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

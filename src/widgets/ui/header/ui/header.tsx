@@ -14,10 +14,18 @@ export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
         <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
       </div>
       <nav className={styles.navigation}>
+        <div className={styles.links}>
+          <span className={styles.link}>О нас</span>
+          <span className={styles.link}>Услуги</span>
+          <span className={styles.link}>Вакансии</span>
+          <span className={styles.link}>Новости</span>
+          <span className={styles.link}>Соглашения</span>
+        </div>
         {!isUserAuthorized ? (
-          <>
-            <Button variant="wide" text="зарегистрироваться" /> <Button variant="outlined" text="войти" />
-          </>
+          <div className={styles.authorization_buttons}>
+            <Button variant="outlined" text="войти" />
+            <Button variant="contained" text="зарегистрироваться" />
+          </div>
         ) : (
           <p>Юлий Цезарь</p>
         )}

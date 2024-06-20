@@ -7,7 +7,7 @@ import clsx from "clsx";
 export const HeadersAndFooters: FC = () => {
   return (
     <HeadersAndFootersLayout>
-      <Header isUserAuthorized={true} />
+      <Header isUserAuthorized={false} />
     </HeadersAndFootersLayout>
   );
 };
