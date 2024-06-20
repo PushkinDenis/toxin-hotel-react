@@ -8,11 +8,11 @@ type LayoutUiKitProps = {
 
 export const CardsLayout: FC<LayoutUiKitProps> = ({ children }) => {
   return (
-    <>
+    <div className={styles.body_wrapper}>
       <div className={clsx(styles.wrapper)}>
         <img src="./icons/ui-kit-icon.svg" alt="icon" />
         <main>{children}</main>
       </div>
-    </>
+    </div>
   );
 };
