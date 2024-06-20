@@ -44,7 +44,7 @@ export const FormElements: FC = () => {
               </div>
             </ElementLayout>
             <ElementLayout label={"Toggle"} type="second_col">
-              <Switch label="Получать спецпредложения" isChecked={true} />
+              <Switch label="Получать спецпредложения" isChecked />
               <Switch label="Получать спецпредложения" />
             </ElementLayout>
             <ElementLayout label={"like button"} type="second_col">
