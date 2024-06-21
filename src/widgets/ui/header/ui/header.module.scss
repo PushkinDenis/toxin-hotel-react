@@ -74,3 +74,9 @@
     content: url("./icons/expand_more.svg");
   }
 }
+
+.user {
+  @include vars.textGrey;
+  padding-left: 20px;
+  border-left: 1px solid var(--color-dark-shade-10);
+}

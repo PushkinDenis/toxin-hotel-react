@@ -1,6 +1,5 @@
 import { FC } from "react";
 import styles from "./header.module.scss";
-import clsx from "clsx";
 import { Button } from "@shared";
 type HeaderProps = {
   isUserAuthorized: boolean;
@@ -39,7 +38,7 @@ export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
             <Button variant="contained" text="зарегистрироваться" />
           </div>
         ) : (
-          <p>Юлий Цезарь</p>
+          <span className={styles.user}>Юлий Цезарь</span>
         )}
       </nav>
     </div>
