@@ -10,6 +10,22 @@
   flex-direction: column;
   align-items: center;
   padding: 104px 140px 0 140px;
+  &_mobile {
+    display: flex;
+    flex-direction: column;
+    width: 768px;
+    height: 367px;
+    background-color: var(--color-white);
+    box-shadow: 0px 10px 20px 0px #1f20410d;
+    align-items: center;
+    justify-content: center;
+    & > div:first-child {
+      margin-bottom: 20px;
+    }
+    & > span:nth-child(2) {
+      margin-bottom: 25px;
+    }
+  }
   &_wrapper {
     display: grid;
     justify-content: center;

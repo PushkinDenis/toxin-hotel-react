@@ -8,6 +8,7 @@ export const HeadersAndFooters: FC = () => {
       <Header isUserAuthorized={false} />
       <Header isUserAuthorized={true} />
       <Footer />
+      <Footer type="mobile" />
     </HeadersAndFootersLayout>
   );
 };
