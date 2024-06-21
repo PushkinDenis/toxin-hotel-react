@@ -95,6 +95,7 @@
     height: 70px;
     background-color: inherit;
     padding: 23px 140px 23px 140px;
+    border-top: 1px solid #dedee3;
     &_text {
       @include vars.textGrey;
       color: var(--color-dark-shade-75);
