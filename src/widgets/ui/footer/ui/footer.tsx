@@ -68,6 +68,14 @@ export const Footer: FC<FooterProps> = ({ isUserAuthorized }) => {
           <TextField type="subscription" placeholder="Email" />
         </div>
       </div>
+      <div className={styles.footer_copyright}>
+        <span className={styles.footer_copyright_text}>Copyright © 2018 Toxin отель. Все права защищены.</span>
+        <div className={styles.footer_copyright_social_media}>
+          <img src="./icons/twitter.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+          <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+          <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+        </div>
+      </div>
     </div>
   );
 };
