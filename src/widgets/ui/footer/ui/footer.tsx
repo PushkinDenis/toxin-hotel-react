@@ -1,6 +1,6 @@
 import { FC } from "react";
 import styles from "./footer.module.scss";
-import { Button } from "@shared";
+import { TextField } from "@shared";
 import clsx from "clsx";
 clsx;
 type FooterProps = {
@@ -32,6 +32,40 @@ export const Footer: FC<FooterProps> = ({ isUserAuthorized }) => {
           <a href="#">
             <span className={styles.footer_link}>Услуги</span>
           </a>
+        </div>
+        <div className={clsx(styles.footer_column)}>
+          <span className={clsx(styles.footer_head)}>о нас</span>
+          <a href="#">
+            <span className={styles.footer_link}>О сервисе</span>
+          </a>
+          <a href="#">
+            <span className={styles.footer_link}>Наша команда</span>
+          </a>
+          <a href="#">
+            <span className={styles.footer_link}>Вакансии</span>
+          </a>
+          <a href="#">
+            <span className={styles.footer_link}>Инвесторы</span>
+          </a>
+        </div>
+        <div className={clsx(styles.footer_column)}>
+          <span className={clsx(styles.footer_head)}>Служба поддержки</span>
+          <a href="#">
+            <span className={styles.footer_link}>Соглашения</span>
+          </a>
+          <a href="#">
+            <span className={styles.footer_link}>Сообщества</span>
+          </a>
+          <a href="#">
+            <span className={styles.footer_link}>Связь с нами</span>
+          </a>
+        </div>
+        <div className={clsx(styles.footer_column)}>
+          <span className={clsx(styles.footer_head)}>Подписка</span>
+          <a href="#">
+            <span className={styles.footer_link}>Получайте специальные предложения и новости сервиса</span>
+          </a>
+          <TextField type="subscription" placeholder="Email" />
         </div>
       </div>
     </div>

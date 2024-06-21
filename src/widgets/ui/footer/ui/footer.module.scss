@@ -1,17 +1,43 @@
 @use "../../../../variables.scss" as vars;
 
 .footer {
-  width: 1350px;
+  width: 1440px;
   height: 443px;
   background-color: var(--color-white);
   box-shadow: 0px 10px 20px 0px #1f20410d;
   display: flex;
+  align-items: center;
   padding: 15px 140px 15px 140px;
   &_wrapper {
     display: grid;
-    grid-template-columns: 260px 143px 108px 130px 260px;
-    height: 168px;
+    width: 1350px;
+    grid-template-columns: 300px 200px 200px 149px 311px;
+    height: fit-content;
     align-items: start;
+    & > div:first-child {
+      margin-right: 40px;
+    }
+    & > div:nth-child(2) {
+      margin-right: 57px;
+    }
+    & > div:nth-child(3) {
+      margin-right: 92px;
+    }
+    & > div:last-child {
+      margin-left: 51px;
+      & > div:last-child {
+        width: 260px;
+        & > div:first-child {
+          width: 260px;
+        }
+      }
+      & > a:nth-child(2) {
+        & > span:first-child {
+          color: var(--color-dark-shade-75);
+          line-height: 24px;
+        }
+      }
+    }
   }
   &_logo_wrapper {
     display: flex;
@@ -29,10 +55,11 @@
   &_column {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
   }
   &_head {
     @include vars.textBody;
+    font-size: 12px;
     line-height: normal;
     color: var(--color-dark-shade-100);
     text-transform: uppercase;
