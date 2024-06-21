@@ -1,0 +1,45 @@
+@use "../../../../variables.scss" as vars;
+
+.footer {
+  width: 1350px;
+  height: 443px;
+  background-color: var(--color-white);
+  box-shadow: 0px 10px 20px 0px #1f20410d;
+  display: flex;
+  padding: 15px 140px 15px 140px;
+  &_wrapper {
+    display: grid;
+    grid-template-columns: 260px 143px 108px 130px 260px;
+    height: 168px;
+    align-items: start;
+  }
+  &_logo_wrapper {
+    display: flex;
+    width: 105px;
+    height: 40px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &_logo_column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    @include vars.textBody;
+  }
+  &_column {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &_head {
+    @include vars.textBody;
+    line-height: normal;
+    color: var(--color-dark-shade-100);
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  &_link {
+    @include vars.textGrey;
+    line-height: normal;
+  }
+}
