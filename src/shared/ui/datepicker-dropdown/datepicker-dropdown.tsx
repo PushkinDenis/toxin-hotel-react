@@ -15,7 +15,7 @@ type DatePickerDropdownProps = {
 };
 
 export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ defaultDate, defaultValue, isOpen, type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
-  const [open, setOpen] = useState<boolean>(!isOpen && !defaultValue ? false : true);
+  const [open, setOpen] = useState<boolean>(!isOpen && !defaultDate ? false : true);
   const [value, setValue] = useState<[Date | null, Date | null]>(defaultValue ? defaultValue : [null, null]);
 
   const handleValueChange = (newValue: [Date | null, Date | null]) => {
