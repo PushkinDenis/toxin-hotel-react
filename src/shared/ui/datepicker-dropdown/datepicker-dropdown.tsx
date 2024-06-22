@@ -10,11 +10,13 @@ type DatePickerDropdownProps = {
   defaultFirstValue?: string;
   defaultSecondValue?: string;
   isOpen?: boolean;
+  defaultDate?: Date;
+  defaultValue?: [Date | null, Date | null];
 };
 
-export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ isOpen, type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
-  const [open, setOpen] = useState<boolean>(!isOpen ? false : true);
-  const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
+export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ defaultDate, defaultValue, isOpen, type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
+  const [open, setOpen] = useState<boolean>(!isOpen && !defaultValue ? false : true);
+  const [value, setValue] = useState<[Date | null, Date | null]>(defaultValue ? defaultValue : [null, null]);
 
   const handleValueChange = (newValue: [Date | null, Date | null]) => {
     setValue(newValue);
@@ -63,7 +65,7 @@ export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ isOpen, type, 
             <TextField onClick={handleOpen} type={"date-wide"} placeholder={"ДД.ММ.ГГГГ"} value={value && value[0] ? `${parseDateRu(`${value[0]}`)} - ${parseDateRu(`${value[1]}`)}` : ""} />
           </>
         )}
-        {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} /> : false}
+        {open ? <RangeDatePicker val={value} onChange={handleValueChange} handleClose={setOpen} handleVal={setValue} defaulDate={defaultDate} defaultValue={defaultValue} /> : false}
       </div>
     </>
   );

@@ -26,10 +26,11 @@ interface CustomDatePickerProps {
   handleVal?: (buttonprop: any) => void;
   isStatic?: boolean;
   defaulDate?: Date;
+  defaultValue?: [Date | null, Date | null];
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
-  const { val, onChange, handleClose, handleVal, isStatic, defaulDate } = props;
+  const { val, onChange, handleClose, handleVal, isStatic, defaulDate, defaultValue } = props;
   const [_open, setOpen] = useState<boolean>(false);
   const [valu, setValu] = useState([null, null]);
   const handleValue = (newValue: [Date | null, Date | null]) => {
@@ -51,7 +52,7 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
             previousIcon={<ArrowBack sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             nextIcon={<ArrowForward sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             type="range"
-            value={val}
+            value={defaulDate !== undefined && val![0] === null && val![1] === null ? defaultValue : val}
             onChange={handleValue}
             classNames={{
               wrapper: styles.mantineDatePickerWrapper,

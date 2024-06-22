@@ -9,6 +9,18 @@
   & > div:first-child {
     margin: 70px auto auto 140px;
   }
+
+  &_datepicker_active {
+    & > div:first-child {
+      & > div:nth-child(2) {
+        & button[aria-label = '8 августа 2019'] {
+          color: (var(--color-white));
+          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+          border-radius: 50%;
+        }
+      }
+    }
+  }
 }
 
 .text {

@@ -11,6 +11,7 @@ export const App: FC = () => {
         <Route path="/toxin-hotel-react/cards" element={<Cards />}></Route>
         <Route path="/toxin-hotel-react/headers-and-footers" element={<HeadersAndFooters />}></Route>
         <Route path="/toxin-hotel-react/landing-page" element={<LandingPage />}></Route>
+        <Route path="/toxin-hotel-react/landing-page-dates" element={<LandingPage defaultDate={new Date(2019, 7)} defaultValue={[new Date(2019, 7, 19), new Date(2019, 7, 23)]} />}></Route>
         <Route path="*" element={<main />}></Route>
       </Routes>
     </BrowserRouter>
