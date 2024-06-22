@@ -1,6 +1,21 @@
-.wrapper {
+@use "../../variables" as vars;
+
+.main {
+  background-image: url("./pictures/room_3.png");
+  width: 100%;
+  height: 830px;
+  background-size: cover;
+
+  & > div:first-child {
+    margin: 70px auto auto 140px;
+  }
+}
+
+.text {
+  @include vars.textBody;
   display: flex;
-  width: 1440px;
-  flex-direction: column;
-  align-items: center;
+  text-align: end;
+  margin: 320px 134px 18px auto;
+  width: 297px;
+  height: 48px;
 }

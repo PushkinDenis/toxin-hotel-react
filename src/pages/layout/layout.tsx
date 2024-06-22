@@ -6,7 +6,7 @@ type LayoutProps = {
   children: ReactNode;
 };
 
-export const RoomCard: FC<LayoutProps> = ({ children }) => {
+export const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <div className={styles.wrapper}>
       <Header isUserAuthorized={false} />
