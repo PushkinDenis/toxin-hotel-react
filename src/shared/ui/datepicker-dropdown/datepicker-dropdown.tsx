@@ -9,10 +9,11 @@ type DatePickerDropdownProps = {
   label_second?: string;
   defaultFirstValue?: string;
   defaultSecondValue?: string;
+  isOpen?: boolean;
 };
 
-export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
-  const [open, setOpen] = useState<boolean>(false);
+export const DatePickerDropdown: FC<DatePickerDropdownProps> = ({ isOpen, type, label_first, label_second, defaultFirstValue, defaultSecondValue }) => {
+  const [open, setOpen] = useState<boolean>(!isOpen ? false : true);
   const [value, setValue] = useState<[Date | null, Date | null]>([null, null]);
 
   const handleValueChange = (newValue: [Date | null, Date | null]) => {

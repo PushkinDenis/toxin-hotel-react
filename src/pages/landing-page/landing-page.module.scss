@@ -1,7 +1,7 @@
 @use "../../variables" as vars;
 
 .main {
-  background-image: url("./pictures/room_3.png");
+  background: url('/pictures/room_3.png');
   width: 100%;
   height: 830px;
   background-size: cover;
