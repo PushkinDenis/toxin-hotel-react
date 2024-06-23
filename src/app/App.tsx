@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { ColorsAndType, FormElements, Cards, HeadersAndFooters, LandingPage, SearchRoom } from "@pages";
+import { ColorsAndType, FormElements, Cards, HeadersAndFooters, LandingPage, SearchRoom, RoomDetails } from "@pages";
 
 export const App: FC = () => {
   return (
@@ -16,6 +16,7 @@ export const App: FC = () => {
         <Route path="/toxin-hotel-react/search-room" element={<SearchRoom />}></Route>
         <Route path="/toxin-hotel-react/search-room-dropdown" element={<SearchRoom isDropdownActive={true} />}></Route>
         <Route path="/toxin-hotel-react/search-room-checkbox" element={<SearchRoom isCheckboxListActive={true} />}></Route>
+        <Route path="/toxin-hotel-react/room-details" element={<RoomDetails />}></Route>
         <Route path="*" element={<main />}></Route>
       </Routes>
     </BrowserRouter>
