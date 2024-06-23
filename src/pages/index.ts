@@ -4,3 +4,4 @@ export * from "./landing-page/landing-page.tsx";
 export * from "./search-room/search-room.tsx";
 export * from "./room-details/room-details.tsx";
 export * from "./registration/registration.tsx";
+export * from "./sign-in/sign-in.tsx";
