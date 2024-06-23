@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CardsLayout, LayoutUiKit } from "@pages";
+import { LayoutUiKit } from "@pages";
 import { FindRoomCard, SignUpCard, LogInCard, BillCard, RoomCard } from "@widgets";
 import { RangeDatePicker } from "@shared";
 import styles from "./cards.module.scss";
