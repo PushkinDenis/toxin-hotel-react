@@ -2,7 +2,12 @@ import { FC } from "react";
 import styles from "./bill-card.module.scss";
 import { WidgetTitle, Text, Button, DatePickerDropdown, LabelTemplate, Dropdown } from "@shared";
 
-export const BillCard: FC = () => {
+type BillCardProps = {
+  isDropdownValue?: boolean;
+  isDatePickerDropdownValue?: boolean;
+};
+
+export const BillCard: FC<BillCardProps> = ({ isDatePickerDropdownValue, isDropdownValue }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.label_wrapper}>
@@ -15,9 +20,9 @@ export const BillCard: FC = () => {
           <span className={styles.label_text}>в сутки</span>
         </div>
       </div>
-      <DatePickerDropdown label_first={"прибытие"} label_second={"выезд"} type={"date"} />
+      <DatePickerDropdown label_first={"прибытие"} label_second={"выезд"} type={"date"} defaultValue={isDatePickerDropdownValue ? [new Date(2019, 7, 19), new Date(2019, 7, 23)] : undefined} />
       <LabelTemplate label={"гости"}>
-        <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} />
+        <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} values={isDropdownValue ? [1, 2, 0] : undefined} />
       </LabelTemplate>
       <div className={styles.expenses}>
         <div className={styles.expense}>

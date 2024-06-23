@@ -39,6 +39,7 @@
 
   &_rules {
     display: flex;
+    justify-content: space-between;
     gap: 81px;
   }
 
@@ -77,6 +78,7 @@
     &_wrapper {
       display: flex;
       justify-content: space-between;
+      align-items: center;
 
       & > h1:first-child {
         font-size: 19px;
@@ -101,6 +103,7 @@
 
   &_description {
     display: flex;
+    justify-content: space-between;
     gap: 81px;
   }
 

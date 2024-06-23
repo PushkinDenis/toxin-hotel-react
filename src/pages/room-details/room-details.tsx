@@ -52,7 +52,7 @@ export const RoomDetails: FC = () => {
               </div>
             </div>
           </div>
-          <BillCard />
+          <BillCard isDropdownValue={true} isDatePickerDropdownValue={true} />
         </div>
       </main>
     </Layout>
