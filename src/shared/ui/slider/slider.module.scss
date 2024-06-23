@@ -47,8 +47,7 @@
   margin-bottom: 20px;
 
   &_text {
-    color: var(--color-dark-shade-100);
-    font-weight: 700;
+    @include vars.label;
   }
 
   &_values {
