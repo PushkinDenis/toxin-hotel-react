@@ -1,3 +1,16 @@
+.wrapper {
+  width: 100%;
+  background: var(--color-background);
+  & > div:first-child {
+    & > main {
+      justify-content: center;
+      margin: 72px 140px 140px 140px;
+      display: inline-flex;
+      gap: 40px;
+    }
+  }
+}
+
 .date_wrapper {
   min-height: fit-content;
   width: fit-content;

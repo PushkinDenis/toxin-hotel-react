@@ -27,10 +27,11 @@ interface CustomDatePickerProps {
   isStatic?: boolean;
   defaulDate?: Date;
   defaultValue?: [Date | null, Date | null];
+  defaultDateStatic?: Date;
 }
 
 export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
-  const { val, onChange, handleClose, handleVal, isStatic, defaulDate, defaultValue } = props;
+  const { val, onChange, handleClose, handleVal, isStatic, defaulDate, defaultValue, defaultDateStatic } = props;
   const [_open, setOpen] = useState<boolean>(false);
   const [valu, setValu] = useState([null, null]);
   const handleValue = (newValue: [Date | null, Date | null]) => {
@@ -48,7 +49,7 @@ export const RangeDatePicker: FC<CustomDatePickerProps> = (props) => {
       <div className={isStatic ? clsx(styles.wrapper, styles.wrapper_static) : styles.wrapper}>
         <DatesProvider settings={{ locale: "ru" }}>
           <DatePicker
-            defaultDate={defaulDate}
+            defaultDate={isStatic ? defaultDateStatic : defaulDate}
             previousIcon={<ArrowBack sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             nextIcon={<ArrowForward sx={{ fontSize: "24px", color: "var(--color-purple)" }} />}
             type="range"
