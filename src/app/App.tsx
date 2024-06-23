@@ -14,6 +14,8 @@ export const App: FC = () => {
         <Route path="/toxin-hotel-react/landing-page-dates" element={<LandingPage defaultDate={new Date(2019, 7)} defaultValue={[new Date(2019, 7, 19), new Date(2019, 7, 23)]} />}></Route>
         <Route path="/toxin-hotel-react/landing-page-dropdown" element={<LandingPage defaultValue={[new Date(2019, 7, 19), new Date(2019, 7, 23)]} isDropdownActive={true} dropdownValues={[2, 1, 0]} />}></Route>
         <Route path="/toxin-hotel-react/search-room" element={<SearchRoom />}></Route>
+        <Route path="/toxin-hotel-react/search-room-dropdown" element={<SearchRoom isDropdownActive={true} />}></Route>
+        <Route path="/toxin-hotel-react/search-room-checkbox" element={<SearchRoom isCheckboxListActive={true} />}></Route>
         <Route path="*" element={<main />}></Route>
       </Routes>
     </BrowserRouter>

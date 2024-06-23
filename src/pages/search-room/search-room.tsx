@@ -5,14 +5,13 @@ import { RoomCard } from "@widgets";
 import { Checkbox, CheckboxList, DatePickerDropdown, Dropdown, LabelTemplate, Pagination, Slider, WidgetTitle } from "@shared";
 
 type SearchRoomProps = {
-  isDatePickerActive?: boolean;
-  defaultDate?: Date;
-  defaultValue?: [Date | null, Date | null];
+  isCheckboxListActive?: boolean;
+  checkboxListValues?: number[];
   isDropdownActive?: boolean;
   dropdownValues?: number[];
 };
 
-export const SearchRoom: FC<SearchRoomProps> = () => {
+export const SearchRoom: FC<SearchRoomProps> = ({ isDropdownActive, isCheckboxListActive }) => {
   return (
     <Layout>
       <main className={styles.main}>
@@ -33,10 +32,12 @@ export const SearchRoom: FC<SearchRoomProps> = () => {
             <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
             <Checkbox label="Помощник для инвалидов" type="rich" description="На 1 этаже вас встретит специалист и проводит до номера." />
           </LabelTemplate>
-          <LabelTemplate label={"доступность"}>
-            <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} values={[2, 2, 0]} />
-          </LabelTemplate>
-          <CheckboxList labelText={"дополнительные удобства"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
+          <LabelTemplate label={"доступность"}>{isDropdownActive ? <Dropdown isActive={true} items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} values={[2, 2, 0]} /> : <Dropdown items={["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]} values={[2, 2, 0]} />}</LabelTemplate>
+          {isCheckboxListActive ? (
+            <CheckboxList isActive={true} activeCheckboxes={[false, true, true, true, false, false]} labelText={"дополнительные удобства"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
+          ) : (
+            <CheckboxList labelText={"дополнительные удобства"} text={["Завтрак", "Письменный стол", "Стул для кормления", "Кроватка", "Телевизор", "Шампунь"]} />
+          )}
         </div>
         <div className={styles.rooms}>
           <WidgetTitle text={"Номера, которые мы для вас подобрали"} />
