@@ -72,3 +72,20 @@
   margin-top: 10px;
   align-self: center;
 }
+
+:global .MuiPagination-ul {
+  & > li:last-child {
+    color: var(--color-white);
+    border-radius: 50%;
+    background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
+
+    & > button {
+      color: var(--color-white);
+
+      & > svg {
+        color: var(--color-white) !important;
+      }
+    }
+  }
+
+}

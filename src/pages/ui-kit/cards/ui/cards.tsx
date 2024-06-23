@@ -20,8 +20,8 @@ export const Cards: FC = () => {
         <div className={styles.date_wrapper}>
           <RangeDatePicker isStatic />
         </div>
-        <RoomCard type="photos" roomNumber={"№ 888"} roomType={"люкс"} price={"9 990₽ "} feedbackNumber={"145"} image={"./pictures/room_1.png"} />
-        <RoomCard roomNumber={"№ 840"} roomType={""} price={"9 990₽ "} feedbackNumber={"65"} image={"./pictures/room_2.png"} />
+        <RoomCard type="photos" roomNumber={"№ 888"} roomType={"люкс"} price={"9 990₽ "} feedbackNumber={"145"} image={"./pictures/room_1.png"} rating={5} />
+        <RoomCard roomNumber={"№ 840"} roomType={""} price={"9 990₽ "} feedbackNumber={"65"} image={"./pictures/room_2.png"} rating={5} />
       </div>
     </CardsLayout>
   );

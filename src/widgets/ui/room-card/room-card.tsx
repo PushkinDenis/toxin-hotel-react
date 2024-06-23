@@ -10,9 +10,10 @@ type RoomCardProps = {
   feedbackNumber: string;
   image: string;
   type?: "photos";
+  rating?: number;
 };
 
-export const RoomCard: FC<RoomCardProps> = ({ roomNumber, roomType, price, feedbackNumber, image, type }) => {
+export const RoomCard: FC<RoomCardProps> = ({ rating, roomNumber, roomType, price, feedbackNumber, image, type }) => {
   return (
     <div className={type === "photos" ? clsx(styles.wrapper, styles.wrapper_photos) : styles.wrapper}>
       <div className={styles.container}>
@@ -31,7 +32,7 @@ export const RoomCard: FC<RoomCardProps> = ({ roomNumber, roomType, price, feedb
             </div>
           </div>
           <div className={styles.row_second}>
-            <Rating defaultValue={5} />
+            <Rating defaultValue={rating} />
             <div className={styles.price}>
               <span className={styles.label_text}>
                 <strong>
