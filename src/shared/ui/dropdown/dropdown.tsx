@@ -15,9 +15,10 @@ type DropdownProps = {
   items: string[];
   isActive?: boolean;
   values?: number[];
+  type?: "small";
 };
 
-export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
+export const Dropdown: FC<DropdownProps> = ({ items, isActive, type, values }) => {
   const [val] = React.useState<number | null>(0);
   const [totalVal, setTotalVal] = React.useState<(number | null)[]>([0, 0, 0]);
   const [open, setOpen] = React.useState(false);
@@ -69,7 +70,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
             onOpen={handleOpen}
             onClose={handleClose}
             IconComponent={() => <SvgIcon className={styles.icon} component={ExpandMore}></SvgIcon>}
-            className={styles.select}
+            className={type === "small" ? clsx(styles.select, styles["select-small"]) : styles.select}
             multiple
             ref={selectRef}
             value={handleValue()}
@@ -92,7 +93,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
                 horizontal: "left",
               },
               PaperProps: {
-                className: styles.paper,
+                className: `${type === "small" ? clsx(styles.paper, styles["paper-small"]) : styles.paper}`,
                 elevation: 0,
               },
             }}
@@ -100,7 +101,7 @@ export const Dropdown: FC<DropdownProps> = ({ items, isActive, values }) => {
             renderValue={(selected) => selected.join(", ")}
           >
             {items.map((item, index) => (
-              <MenuItem key={index} value={item} className={styles.menu}>
+              <MenuItem key={index} value={item} className={type === "small" ? clsx(styles.menu, styles["menu-small"]) : styles.menu}>
                 <ListItemText primary={item} className={styles.item} />
                 <Counter
                   initialValue={totalVal[index]}

@@ -21,7 +21,7 @@ export const SearchRoom: FC<SearchRoomProps> = ({ isDropdownActive, dropdownValu
             <DatePickerDropdown type={"date-wide"} />
           </LabelTemplate>
           <LabelTemplate label={"гости"}>
-            <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} values={[2, 1, 1]} />
+            <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} values={[2, 1, 1]} type={"small"} />
           </LabelTemplate>
           <Slider label={"диапазон цены"} />
           <LabelTemplate label={"правила дома"}>
