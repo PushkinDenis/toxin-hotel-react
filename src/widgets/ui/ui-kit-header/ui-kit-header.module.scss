@@ -1,0 +1,13 @@
+.header {
+  width: 1440px;
+  height: 78px;
+  padding: 30px 0 0 30px;
+  background-color: var(--color-white);
+  &_grey {
+    background-color: var(--color-background);
+  }
+  & > img {
+    width: 48px;
+    height: 48px;
+  }
+}

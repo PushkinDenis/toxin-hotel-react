@@ -1,6 +1,8 @@
 .wrapper {
   display: flex;
   justify-content: space-between;
+  margin: 67px 158px 145px 150px;
+  font-family: var(--font);
 }
 
 .color {
@@ -40,13 +42,19 @@
     display: grid;
     grid-template-columns: 37px 1fr;
 
-    & > h1:first-child, h2:first-child, h3:first-child, p:first-child {
+    & > h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    p:first-child {
       color: var(--color-dark-shade-25);
       font-weight: normal;
       text-align: end;
     }
 
-    & > h1:last-child, h2:last-child, h3:last-child, p:last-child {
+    & > h1:last-child,
+    h2:last-child,
+    h3:last-child,
+    p:last-child {
       margin-left: 30px;
     }
   }
@@ -54,7 +62,7 @@
 
 @media only screen and (max-width: 600px) {
   h1 {
-    font-size: 20px
+    font-size: 20px;
   }
 
   h2 {
@@ -92,7 +100,10 @@
       grid-template-columns: 37px 1fr;
       margin-top: 30px;
 
-      & > h1:first-child, h2:first-child, h3:first-child, p:first-child {
+      & > h1:first-child,
+      h2:first-child,
+      h3:first-child,
+      p:first-child {
         color: var(--color-dark-shade-25);
         font-weight: normal;
         text-align: end;
