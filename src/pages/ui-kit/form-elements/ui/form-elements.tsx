@@ -117,6 +117,7 @@ export const FormElements: FC = () => {
             textLikeButton={"12"}
             userName={"Мурад Сарафанов"}
             userLastLogin={"5 дней назад"}
+            isLiked={true}
           />
         </div>
       </div>

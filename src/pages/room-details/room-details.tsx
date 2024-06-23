@@ -38,6 +38,7 @@ export const RoomDetails: FC = () => {
                 textLikeButton={"12"}
                 userName={"Мурад Сарафанов"}
                 userLastLogin={"5 дней назад"}
+                isLiked={true}
               />
               <Review review={"Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент"} img={"./pictures/user_2.png"} textLikeButton={"2"} userName={"Патрисия Стёклышкова"} userLastLogin={"Неделю назад"} />
             </div>
