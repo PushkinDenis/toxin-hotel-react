@@ -39,7 +39,7 @@ export const FormElements: FC = () => {
             </ElementLayout>
             <ElementLayout label={"Radio Buttons"} type="second_col">
               <div className={styles.inline_wrapper}>
-                <Radio label="Мужчина" />
+                <Radio />
               </div>
             </ElementLayout>
             <ElementLayout label={"Toggle"} type="second_col">
