@@ -11,7 +11,7 @@ export const LogInCard: FC = () => {
       <Button variant={"wide"} text={"войти"} />
       <div className={styles.sign_up}>
         <Text type={"black"} text={"Нет аккаунта на Toxin?"} />
-        <Button variant={"outlined"} text={"создать"} />
+        <Button variant={"outlined"} text={"создать"} link="https://pushkindenis.github.io/toxin-hotel-react/registration" />
       </div>
     </div>
   );

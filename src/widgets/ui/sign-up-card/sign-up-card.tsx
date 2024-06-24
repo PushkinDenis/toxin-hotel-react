@@ -19,10 +19,10 @@ export const SignUpCard: FC = () => {
         <TextField placeholder={"Пароль"} />
       </LabelTemplate>
       <Switch label={"Получать спецпредложения"} />
-      <Button variant={"wide"} text={"перейти к оплате"} />
+      <Button variant={"wide"} text={"перейти к оплате"} link="https://pushkindenis.github.io/toxin-hotel-react/room-details" />
       <div className={styles.log_in}>
         <Text type={"black"} text={"Уже есть аккаунт на Toxin"} />
-        <Button variant={"outlined"} text={"войти"} />
+        <Button variant={"outlined"} text={"войти"} link="https://pushkindenis.github.io/toxin-hotel-react/sign-in" />
       </div>
     </div>
   );
