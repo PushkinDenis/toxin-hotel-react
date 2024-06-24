@@ -9,8 +9,7 @@ export const SignUpCard: FC = () => {
       <TextField placeholder={"Имя"} />
       <TextField placeholder={"Фамилия"} />
       <div className={styles.radio_group}>
-        <Radio label={"Мужчина"} isChecked={true} />
-        <Radio label={"Женщина"} />
+        <Radio />
       </div>
       <LabelTemplate label={"дата рождения"}>
         <TextField placeholder={"ДД.ММ.ГГГГ"} mask={true} />

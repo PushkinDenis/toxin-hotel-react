@@ -1,32 +1,19 @@
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import styles from "./radio.module.scss";
-import { Checkbox as RadioMui, StyledEngineProvider, FormControlLabel } from "@mui/material";
+import { Radio as RadioMui, RadioGroup, StyledEngineProvider, FormControlLabel } from "@mui/material";
 import { RadioChecked, RadioIcon } from "@shared";
 import clsx from "clsx";
 
-type RadioProps = {
-  label?: string;
-  isChecked?: boolean;
-};
+export const Radio: FC = () => {
+  const [radioGroupValue, setRadioGroupValue] = useState("мужчина");
 
-export const Radio: FC<RadioProps> = ({ label, isChecked }) => {
-  const [click, setClick] = useState<boolean>(false);
-  const [active, setActive] = useState<boolean>(false);
-
-  useEffect(() => {
-    if (isChecked) {
-      setActive(true);
-    }
-  }, []);
-
-  const handleClick = () => {
-    click ? setClick(false) : setClick(true);
-    active ? setActive(false) : setActive(true);
-  };
   return (
     <>
       <StyledEngineProvider injectFirst>
-        <FormControlLabel className={click ? clsx(styles.form, styles.form_active) : styles.form} control={<RadioMui checked={active} onClick={handleClick} icon={<RadioIcon />} checkedIcon={<RadioChecked />} />} label={label} />
+        <RadioGroup className={styles.radio} value={radioGroupValue}>
+          <FormControlLabel value="мужчина" className={radioGroupValue === "мужчина" ? clsx(styles.form, styles.form_active) : styles.form} onClick={() => setRadioGroupValue("мужчина")} control={<RadioMui icon={<RadioIcon />} checkedIcon={<RadioChecked />} />} label={"Мужчина"} />
+          <FormControlLabel value="женщина" className={radioGroupValue === "женщина" ? clsx(styles.form, styles.form_active) : styles.form} onClick={() => setRadioGroupValue("женщина")} control={<RadioMui icon={<RadioIcon />} checkedIcon={<RadioChecked />} />} label={"Женщина"} />
+        </RadioGroup>
       </StyledEngineProvider>
     </>
   );
