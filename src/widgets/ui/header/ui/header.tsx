@@ -7,7 +7,7 @@ type HeaderProps = {
 
 export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
   return (
-    <div className={styles.header}>
+    <header className={styles.header}>
       <div className={styles.header_logo_wrapper}>
         <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
         <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
@@ -41,6 +41,6 @@ export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
           <span className={styles.user}>Юлий Цезарь</span>
         )}
       </nav>
-    </div>
+    </header>
   );
 };

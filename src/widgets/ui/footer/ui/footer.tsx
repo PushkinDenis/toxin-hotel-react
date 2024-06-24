@@ -11,7 +11,7 @@ export const Footer: FC<FooterProps> = ({ type }) => {
   return (
     <>
       {type !== "mobile" ? (
-        <div className={styles.footer}>
+        <footer className={styles.footer}>
           <div className={styles.footer_wrapper}>
             <div className={styles.footer_logo_column}>
               <div className={styles.footer_logo_wrapper}>
@@ -78,9 +78,9 @@ export const Footer: FC<FooterProps> = ({ type }) => {
               <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
             </div>
           </div>
-        </div>
+        </footer>
       ) : (
-        <div className={styles.footer_mobile}>
+        <footer className={styles.footer_mobile}>
           <div className={styles.footer_logo_wrapper}>
             <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
             <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
@@ -91,7 +91,7 @@ export const Footer: FC<FooterProps> = ({ type }) => {
             <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
             <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
           </div>
-        </div>
+        </footer>
       )}
     </>
   );
