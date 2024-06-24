@@ -1,6 +1,6 @@
 # Welcome to TOXIN hotel website!
 
-## This project was made with React, TypeScript, Vite, Material Ui, Mantine, React Router, Eslint, Prettier, SCSS and deployed to GitHub Pages.
+## This project was made with FSD architecture, React, TypeScript, Vite, Material Ui, Mantine, React Router, Eslint, Prettier, SCSS and deployed to GitHub Pages.
 
 ## You can visite TOXIN's web-pages with links down below!
 
