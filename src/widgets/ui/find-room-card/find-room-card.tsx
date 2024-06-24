@@ -18,7 +18,7 @@ export const FindRoomCard: FC<FindRoomCardProps> = ({ isDropdownActive, dropdown
       <LabelTemplate label={"гости"}>
         <Dropdown items={["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]} isActive={isDropdownActive} values={dropdownValues} />
       </LabelTemplate>
-      <Button variant={"wide"} text={"подобрать номер"} />
+      <Button variant={"wide"} text={"подобрать номер"} link="https://pushkindenis.github.io/toxin-hotel-react/search-room" />
     </div>
   );
 };

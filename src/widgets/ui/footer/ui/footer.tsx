@@ -14,10 +14,12 @@ export const Footer: FC<FooterProps> = ({ type }) => {
         <footer className={styles.footer}>
           <div className={styles.footer_wrapper}>
             <div className={styles.footer_logo_column}>
-              <div className={styles.footer_logo_wrapper}>
-                <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
-                <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
-              </div>
+              <a href="https://pushkindenis.github.io/toxin-hotel-react/landing-page">
+                <div className={styles.footer_logo_wrapper}>
+                  <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
+                  <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
+                </div>
+              </a>
               <span className={styles.footer_logo_text}>Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span>
             </div>
             <div className={clsx(styles.footer_column)}>
@@ -73,23 +75,37 @@ export const Footer: FC<FooterProps> = ({ type }) => {
           <div className={styles.footer_copyright}>
             <span className={styles.footer_copyright_text}>Copyright © 2018 Toxin отель. Все права защищены.</span>
             <div className={styles.footer_copyright_social_media}>
-              <img src="./icons/twitter.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
-              <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
-              <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+              <a href="https://twitter.com/?lang=ru">
+                <img src="./icons/twitter.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+              </a>
+              <a href="https://www.facebook.com/?locale=ru_RU">
+                <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+              </a>
+              <a href="https://www.instagram.com/">
+                <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+              </a>
             </div>
           </div>
         </footer>
       ) : (
         <footer className={styles.footer_mobile}>
-          <div className={styles.footer_logo_wrapper}>
-            <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
-            <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
-          </div>
+          <a href="https://pushkindenis.github.io/toxin-hotel-react/landing-page">
+            <div className={styles.footer_logo_wrapper}>
+              <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
+              <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
+            </div>
+          </a>
           <span className={styles.footer_copyright_text}>Copyright © 2018 Toxin отель. Все права защищены.</span>
           <div className={styles.footer_copyright_social_media}>
-            <img src="./icons/twitter.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
-            <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
-            <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+            <a href="https://twitter.com/?lang=ru">
+              <img src="./icons/twitter.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+            </a>
+            <a href="https://www.facebook.com/?locale=ru_RU">
+              <img src="./icons/facebook.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+            </a>
+            <a href="https://www.instagram.com/">
+              <img src="./icons/instagram.svg" alt="logo" className={styles.footer_copyright_social_media_icon} />
+            </a>
           </div>
         </footer>
       )}

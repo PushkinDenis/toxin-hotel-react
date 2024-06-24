@@ -9,9 +9,10 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant: "text" | "outlined" | "contained" | "wide" | "like";
   text: string;
   isClicked?: boolean;
+  link?: string;
 };
 
-export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicked }) => {
+export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicked, link }) => {
   const [click, setClick] = React.useState<boolean>(false);
 
   const handleClick = () => {
@@ -20,24 +21,24 @@ export const Button: React.FC<ButtonProps> = ({ variant, text, onClick, isClicke
   return (
     <StyledEngineProvider injectFirst>
       {variant === "text" && (
-        <ButtonMui variant="text" className={styles.text} onClick={onClick}>
+        <ButtonMui variant="text" className={styles.text} onClick={onClick} href={link}>
           {text}
         </ButtonMui>
       )}
       {variant === "outlined" && (
         <div className={isClicked ? clsx(styles.outline_wrapper, styles.outline) : clsx(styles.outline_wrapper)}>
-          <ButtonMui variant="outlined" className={styles.outlined}>
+          <ButtonMui variant="outlined" className={styles.outlined} href={link}>
             {text}
           </ButtonMui>
         </div>
       )}
       {variant === "contained" && (
-        <ButtonMui variant="contained" className={styles.contained}>
+        <ButtonMui href={link} variant="contained" className={styles.contained}>
           {text}
         </ButtonMui>
       )}
       {variant === "wide" && (
-        <ButtonMui variant="contained" className={styles.wide} endIcon={<ArrowForward className={styles["icon-arrow"]} />}>
+        <ButtonMui href={link} variant="contained" className={styles.wide} endIcon={<ArrowForward className={styles["icon-arrow"]} />}>
           {text}
         </ButtonMui>
       )}

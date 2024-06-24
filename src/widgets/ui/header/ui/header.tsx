@@ -8,10 +8,12 @@ type HeaderProps = {
 export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
   return (
     <header className={styles.header}>
-      <div className={styles.header_logo_wrapper}>
-        <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
-        <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
-      </div>
+      <a href="https://pushkindenis.github.io/toxin-hotel-react/landing-page">
+        <div className={styles.header_logo_wrapper}>
+          <img src="./icons/toxin-logo.svg" alt="logo" className={styles.logo} />
+          <img src="./icons/toxin-logo-text.svg" alt="toxin" className={styles.logo} />
+        </div>
+      </a>
       <nav className={styles.navigation}>
         <div className={styles.links}>
           <a href="#">
@@ -34,8 +36,8 @@ export const Header: FC<HeaderProps> = ({ isUserAuthorized }) => {
         </div>
         {!isUserAuthorized ? (
           <div className={styles.authorization_buttons}>
-            <Button variant="outlined" text="войти" />
-            <Button variant="contained" text="зарегистрироваться" />
+            <Button variant="outlined" text="войти" link={"https://pushkindenis.github.io/toxin-hotel-react/sign-in"} />
+            <Button variant="contained" text="зарегистрироваться" link={"https://pushkindenis.github.io/toxin-hotel-react/registration"} />
           </div>
         ) : (
           <span className={styles.user}>Юлий Цезарь</span>
